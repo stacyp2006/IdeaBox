@@ -90,9 +90,11 @@ body {
 .title-form {
 display: flex;
 flex-direction: column;
-margin-left: 5%;
-margin-right: 5%;
+margin-left: 2.5%;
+margin-right: 2.5%;
 margin-top: 4%;
+
+border-radius: 3px
 }
 
 .title-text{
@@ -101,13 +103,19 @@ margin-top: 4%;
 }
 
 .title-input {
-
+border: 2px solid #353567;
+border-radius: 3px
 }
 
 
 /*=== body-form ===*/
 
 .body-form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 4%;
 
 }
 
@@ -116,7 +124,8 @@ margin-top: 4%;
 }
 
 .body-input {
-
+  border: 2px solid #353567;
+  border-radius: 3px
 }
 
 /*=== save-form ===*/

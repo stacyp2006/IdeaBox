@@ -6,7 +6,7 @@ html, body, h1, h2, h3, h4, h5, h6, p {
 }
 
 html, body {
-  height: 100%
+  /* height: 100% */
 }
 
 body {
@@ -45,22 +45,37 @@ body {
   font: 'Open Sans' light;
 }
 
+/*=== open-nav-filter ===*/
+
+.open-nav-filter {
+
+}
+
+
 /*=== upper-half-nav-input ===*/
 
 .header-text {
 
 }
 
-.menu-header-icon {
+.menu-nav-close-icon {
+  width: 15%;
+  height: auto;
+  border-style: double;
+  border-color: red;
+}
 
+.menu-header-icon {
+  width: 10%;
+  height: auto;
 }
 
 
 /*=== menu section ===*/
 
 .menu {
-  height: 100%;
-  width: 380px;
+  /* height: 100%;
+  width: 380px; */
 }
 
 
@@ -102,7 +117,8 @@ body {
 /*=== search-form ===*/
 
 .search-icon {
-
+  width: 10%;
+  height: auto;
 }
 
 .search-box-input {
@@ -127,11 +143,17 @@ body {
 }
 
 .card-star-favorite-icon {
-
+  width: 10%;
+  height: auto;
+  border-style: double;
+  border-color: red;
 }
 
 .card-delete-icon {
-
+ width: 10%;
+ height: auto;
+ border-style: double;
+ border-color: red;
 }
 
 /*===*** subsection card-body idea-cards && all-cards ===*/
@@ -155,7 +177,8 @@ body {
 }
 
 .card-add-comment-icon {
-
+  width: 10%;
+  height: auto;
 }
 
 /*=== main section ===*/
@@ -187,9 +210,9 @@ body {
   }
 
   .menu {
-    height: 40px;
+    /* height: 40px;
     text-align: center;
-    width: 100%;
+    width: 100%; */
   }
 
   .idea-form {

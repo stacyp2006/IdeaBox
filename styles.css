@@ -109,6 +109,55 @@ body {
 
 }
 
+
+/*=== idea-cards && all-cards ===*/
+
+.all-cards {
+
+}
+
+.card {
+
+}
+
+/*===*** subsection card-header idea-cards && all-cards ===*/
+
+.card-header {
+
+}
+
+.card-star-favorite-icon {
+
+}
+
+.card-delete-icon {
+
+}
+
+/*===*** subsection card-body idea-cards && all-cards ===*/
+
+.card-body {
+
+}
+
+.card-idea-title {
+
+}
+
+.card-idea-text {
+
+}
+
+/*===*** subsection card-footer idea-cards && all-cards ===*/
+
+.card-footer {
+
+}
+
+.card-add-comment-icon {
+
+}
+
 /*=== main section ===*/
 
 .ideas {

@@ -11,6 +11,7 @@ html, body {
 
 body {
   display: flex;
+  flex-direction: column;
 }
 
 /*=== Background Colors ===*/
@@ -53,9 +54,17 @@ body {
 
 
 /*=== upper-half-nav-input ===*/
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100%;
+  width: 100%;
+}
+
 
 .header-text {
-
+  display: grid;
+  justify-self: center;
 }
 
 .menu-nav-close-icon {
@@ -66,17 +75,13 @@ body {
 }
 
 .menu-header-icon {
-  width: 10%;
-  height: auto;
+  display: grid;
+  width: 50px;
+  height: 30px;
+  padding-top: 20px;
 }
 
 
-/*=== menu section ===*/
-
-.menu {
-  /* height: 100%;
-  width: 380px; */
-}
 
 
 /*=== title-form ===*/

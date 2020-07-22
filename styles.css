@@ -46,10 +46,6 @@ body {
 }
 
 /*=== upper-half-nav-input ===*/
-/* .menu {
-
-//contain for the nav
-} */
 
 .header-text {
 
@@ -65,6 +61,21 @@ body {
 .menu {
   height: 100%;
   width: 380px;
+}
+
+
+/*=== title-form ===*/
+
+.title-form {
+
+}
+
+.title-text{
+
+}
+
+.title-input {
+
 }
 
 /*=== main section ===*/

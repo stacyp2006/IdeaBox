@@ -43,7 +43,7 @@ body {
 }
 
 .body-text {
-  font: 'Open Sans' light;
+  font-family: 'Open Sans';
 }
 
 /*=== open-nav-filter ===*/
@@ -79,6 +79,7 @@ body {
   width: 50px;
   height: 30px;
   padding-top: 20px;
+  padding-left: 5px;
 }
 
 
@@ -87,10 +88,15 @@ body {
 /*=== title-form ===*/
 
 .title-form {
-
+display: flex;
+flex-direction: column;
+margin-left: 5%;
+margin-right: 5%;
+margin-top: 4%;
 }
 
 .title-text{
+  font-family: 'Open Sans';
 
 }
 
@@ -195,7 +201,11 @@ body {
 }
 
 .idea-form {
+  display: flex;
   flex-grow: 2;
+  flex-direction: column;
+  justify-content: center;
+
 }
 
 .idea-cards {

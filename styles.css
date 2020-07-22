@@ -51,8 +51,16 @@ body {
 
 }
 
-.menu-header-icon {
+.menu-nav-close-icon {
+  width: 15%;
+  height: auto;
+  border-style: double;
+  border-color: red;
+}
 
+.menu-header-icon {
+  width: 10%;
+  height: auto;
 }
 
 
@@ -102,7 +110,8 @@ body {
 /*=== search-form ===*/
 
 .search-icon {
-
+  width: 10%;
+  height: auto;
 }
 
 .search-box-input {
@@ -127,11 +136,17 @@ body {
 }
 
 .card-star-favorite-icon {
-
+  width: 10%;
+  height: auto;
+  border-style: double;
+  border-color: red;
 }
 
 .card-delete-icon {
-
+ width: 10%;
+ height: auto;
+ border-style: double;
+ border-color: red;
 }
 
 /*===*** subsection card-body idea-cards && all-cards ===*/
@@ -155,7 +170,8 @@ body {
 }
 
 .card-add-comment-icon {
-
+  width: 10%;
+  height: auto;
 }
 
 /*=== main section ===*/

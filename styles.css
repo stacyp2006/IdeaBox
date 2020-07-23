@@ -97,8 +97,6 @@ body {
 }
 
 .title-text{
-  font-family: 'Open Sans';
-  font-size: 16rem;
   font: bold normal 1rem/2 'Open Sans';
 }
 
@@ -120,7 +118,7 @@ body {
 }
 
 .body-text {
-font: bold normal 1rem/2 'Open Sans';
+  font: bold normal 1rem/2 'Open Sans';
 }
 
 .body-input {
@@ -184,27 +182,27 @@ font: bold normal 1rem/2 'Open Sans';
 
 .card {
   width: 100%;
-  border: 0.1rem solid #5356a4;
+  border: 0.1rem solid #6E646B;
 }
 
 /*===*** subsection card-header idea-cards && all-cards ===*/
 
 .card-header {
-
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 2.5rem;
+  background-color: #1F1F3D;
 }
 
 .card-star-favorite-icon {
   width: 10%;
   height: auto;
-  border-style: double;
-  border-color: red;
 }
 
 .card-delete-icon {
  width: 10%;
  height: auto;
- border-style: double;
- border-color: red;
 }
 
 /*===*** subsection card-body idea-cards && all-cards ===*/

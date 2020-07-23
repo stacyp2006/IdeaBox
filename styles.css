@@ -38,7 +38,7 @@ body {
 .header-text {
   color: #EAEAF4;
   font-family: 'Open Sans';
-  font-weight: bold;
+  font-weight: 600;
   padding: 1rem;
 }
 
@@ -97,7 +97,11 @@ body {
 }
 
 .title-text{
-  font: bold normal 1rem/2 'Open Sans';
+  font-family: 'Open Sans';
+  font-weight: 600;
+  color: #1f1f3d;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 .title-input {
@@ -118,7 +122,11 @@ body {
 }
 
 .body-text {
-  font: bold normal 1rem/2 'Open Sans';
+  font-family: 'Open Sans';
+  font-weight: 600;
+  color: #1f1f3d;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 .body-input {
@@ -142,6 +150,10 @@ body {
   border: 0.1rem solid #5356a4;
   border-radius: .15rem;
   background-color: #353567;
+  color: #EAEAF4;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 1.35rem;
 }
 
 /*=== search-form ===*/
@@ -183,6 +195,7 @@ body {
 .card {
   width: 100%;
   border: 0.1rem solid #1F1F3D;
+  margin-bottom: 1rem;
 }
 
 /*===*** subsection card-header idea-cards && all-cards ===*/
@@ -223,11 +236,17 @@ body {
 
 .card-footer {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 2.5rem;
   background-color: #5356a4;
   border-top: 0.1rem solid #1F1F3D;
+  align-items: center;
+}
+
+.card-footer p {
+  font-family: 'Open Sans';
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .card-add-comment-icon {

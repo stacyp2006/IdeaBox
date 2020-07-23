@@ -78,8 +78,8 @@ body {
   display: grid;
   width: 50px;
   height: 30px;
-  padding-top: 20px;
-  padding-left: 5px;
+  padding-top: 1rem;
+  padding-left: 0.25rem;
 }
 
 
@@ -149,15 +149,25 @@ font: bold normal 1rem/2 'Open Sans';
 /*=== search-form ===*/
 
 .search-icon {
-  width: 10%;
+  width: 2rem;
   height: auto;
 }
 
 .search-box-input {
-
+  height: 3rem;
+  width: 100%;
 }
 
+.search-section {
+  display: flex;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  padding-top: 1.5rem;
+}
 
+.search-icon-button {
+  background-color: #353567;
+}
 /*=== idea-cards && all-cards ===*/
 
 .all-cards {

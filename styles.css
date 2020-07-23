@@ -162,8 +162,10 @@ font: bold normal 1rem/2 'Open Sans';
   display: flex;
   margin-left: 2.5%;
   margin-right: 2.5%;
-  padding-top: 1.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
+  border: 0.1rem solid #5356a4;
+  border-radius: .15rem;
 }
 
 .search-icon-button {

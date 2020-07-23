@@ -195,6 +195,7 @@ body {
 
 .all-cards {
   display: flex;
+  flex-direction: column;
   margin-left: 2.5%;
   margin-right: 2.5%;
   padding-top: 1.5rem;
@@ -217,26 +218,34 @@ body {
 }
 
 .card-star-favorite-icon {
-  width: 10%;
+  width: 8%;
   height: auto;
 }
 
 .card-delete-icon {
- width: 10%;
+ width: 8%;
  height: auto;
 }
 
 /*===*** subsection card-body idea-cards && all-cards ===*/
 
 .card-body {
+  margin: 1rem;
 }
 
 .card-idea-title {
-
+  margin-bottom: 1rem;
+  color: #1f1f3d;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 1.35rem;
 }
 
 .card-idea-text {
-
+  color: #1f1f3d;
+  font-family: 'Open Sans';
+  font-weight: 500;
+  font-size: 1.35rem;
 }
 
 /*===*** subsection card-footer idea-cards && all-cards ===*/

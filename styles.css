@@ -218,12 +218,12 @@ body {
 }
 
 .card-star-favorite-icon {
-  width: 8%;
+  width: 2.5rem;
   height: auto;
 }
 
 .card-delete-icon {
- width: 8%;
+ width: 2.5rem;
  height: auto;
 }
 
@@ -266,7 +266,7 @@ body {
 }
 
 .card-add-comment-icon {
-  width: 10%;
+  width: 2.5rem;
   height: auto;
 }
 

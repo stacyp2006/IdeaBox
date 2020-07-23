@@ -168,6 +168,13 @@ body {
   width: 100%;
 }
 
+.search-box-input::placeholder {
+  font-family: 'Open Sans';
+  color: #a9aad2;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
 .search-section {
   display: flex;
   margin-left: 2.5%;
@@ -182,6 +189,7 @@ body {
   background-color: #353567;
   width: 3rem;
   height: 3rem;
+  border: 0rem;
 }
 /*=== idea-cards && all-cards ===*/
 
@@ -221,7 +229,6 @@ body {
 /*===*** subsection card-body idea-cards && all-cards ===*/
 
 .card-body {
-
 }
 
 .card-idea-title {

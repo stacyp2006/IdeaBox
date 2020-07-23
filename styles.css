@@ -313,3 +313,10 @@ body {
     flex-grow: 1;
   }
 }
+
+@media (min-width: 400px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+}

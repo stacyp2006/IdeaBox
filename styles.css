@@ -176,11 +176,15 @@ font: bold normal 1rem/2 'Open Sans';
 /*=== idea-cards && all-cards ===*/
 
 .all-cards {
-
+  display: flex;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  padding-top: 1.5rem;
 }
 
 .card {
-
+  width: 100%;
+  border: 0.1rem solid #5356a4;
 }
 
 /*===*** subsection card-header idea-cards && all-cards ===*/
@@ -246,6 +250,7 @@ font: bold normal 1rem/2 'Open Sans';
 
 .idea-cards {
   flex-grow: 3;
+
 }
 
 /*=== media queries ===*/

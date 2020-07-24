@@ -56,7 +56,7 @@ body {
 
 }
 
-.open-nav-filter {
+.open-nav-filter hidden{
   position: absolute;
   background: #1F1F3D;
   width: 100%;
@@ -97,7 +97,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.whole-filter-section {
+.whole-filter-section hidden {
   background-color: gray;
   opacity: 50%;
   width: 100%;
@@ -382,6 +382,49 @@ body {
     display: grid;
     grid-template-columns: 1fr 3fr;
   }
+
+  .menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+  }
+
+  .menu-header-icon {
+    display: none;
+  }
+
+  .header-text {
+    margin-top: 0.5rem;
+    justify-self: flex-start;
+    border-bottom: 1px solid #353567;
+  }
+
+  .filter-star-ideas {
+    display: grid;
+    color: #BFBFDD;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+  }
+
+  .show-starred-ideas {
+    display: grid;
+    width: 90%;
+    height: 3rem;
+    border: 0.1rem solid #353567;
+    border-radius: .15rem;
+    background-color: #5356A4;
+    color: #E9E9F3;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin-left: 1rem;
+  }
+
 
   .idea-form {
     padding-left: 25%;

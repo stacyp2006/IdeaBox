@@ -453,7 +453,9 @@ body {
     grid-template-columns: repeat(auto-fill, 20rem);
     grid-gap: 2.5%;
   }
-
-
-
+}
+@media (max-width: 970px) {
+  .show-starred-ideas {
+    font-size: 1.3rem;
+  }
 }

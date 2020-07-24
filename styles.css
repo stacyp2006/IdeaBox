@@ -60,6 +60,7 @@ body {
   width: 100%;
   height: 13rem;
   display: grid;
+  z-index: 1;
 }
 
 .open-nav-top {
@@ -90,6 +91,15 @@ body {
   font-weight: 600;
   font-size: 1.2rem;
   margin-bottom: 1rem;
+}
+
+.grayed-out-area {
+  background-color: gray;
+  opacity: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
 }
 
 /*=== upper-half-nav-input ===*/

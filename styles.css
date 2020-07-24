@@ -12,6 +12,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  /* position: relative; */
 }
 
 /*=== Background Colors ===*/
@@ -52,6 +53,7 @@ body {
   width: 2.75rem;
   height: auto;
   margin: 1rem;
+
 }
 
 .open-nav-filter {
@@ -60,12 +62,14 @@ body {
   width: 100%;
   height: 13rem;
   display: grid;
-  z-index: 1;
+  z-index: 3;
 }
 
 .open-nav-top {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  position:relative;
+  z-index: 3;
 }
 
 .open-nav-bottom {
@@ -93,13 +97,13 @@ body {
   margin-bottom: 1rem;
 }
 
-.grayed-out-area {
+.whole-filter-section {
   background-color: gray;
   opacity: 50%;
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 0;
+  z-index: 1;
 }
 
 /*=== upper-half-nav-input ===*/

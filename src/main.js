@@ -37,6 +37,7 @@ function buildCard(obj) {
     <section class="card" data.id="${obj.id}">
       <section class="card-header">
         <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
+        <img src="./img/star-active.svg" class="card-star-favorite-icon hidden" alt="star favorite">
         <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
       </section>
       <section class="card-body">

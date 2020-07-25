@@ -25,7 +25,7 @@ function keyHandler(event) {
 
 function saveIdeaButton() {
   var obj = newIdeaInstantiation(titleInput.value, bodyInput.value)
-  saveIdea(obj)
+  obj.saveToStorage()
   displayCard(buildCard(obj))
   resetForm()
 }
@@ -35,9 +35,6 @@ function newIdeaInstantiation(title, body) {
   return newIdea
 }
 
-function saveIdea(obj) {
-  storage.push(obj)
-}
 
 function buildCard(obj) {
   return ` <section class="card" id="${obj.id}">

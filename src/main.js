@@ -34,7 +34,7 @@ function saveIdeaButton() {
 
 function buildCard(obj) {
   allCards.insertAdjacentHTML('afterbegin',`
-    <section class="card" id="${obj.id}">
+    <section class="card" data.id="${obj.id}">
       <section class="card-header">
         <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
         <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
@@ -72,8 +72,11 @@ function saveButtonDisable() {
 }
 
 function deleteIdea(){
-  
+  var deleteSelection = event.target.closest(".card")
+  deleteSelection.remove();
+  for (var i = 0; i < storage.length; i++) {
+    if (deleteSelectio.)
+  }
 }
-
 
 //stop

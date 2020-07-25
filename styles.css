@@ -5,15 +5,10 @@ html, body, h1, h2, h3, h4, h5, h6, p {
   padding: 0;
 }
 
-html, body {
-  /* height: 100% */
-}
-
 body {
   display: flex;
   flex-direction: column;
-  height: 100%
-  /* position: relative; */
+  height: 100%;
 }
 
 /*=== Background Colors ===*/
@@ -50,15 +45,14 @@ body {
 
 /*=== open-nav-filter ===*/
 
-/* .hidden {
+.hidden {
   display: none!important;
-} */
+}
 
 .menu-nav-close-icon {
   width: 2.75rem;
   height: auto;
   margin: 1rem;
-
 }
 
 .open-nav-filter {
@@ -118,13 +112,11 @@ body {
   width: 100%;
 }
 
-
 .header-text {
   display: grid;
   justify-self: center;
   font-size: 1.35rem;
 }
-
 
 .menu-header-icon {
   display: grid;
@@ -133,7 +125,6 @@ body {
   padding-top: 0.25rem;
   padding-left: 0.25rem;
 }
-
 
 /*=== title-form ===*/
 
@@ -158,7 +149,6 @@ body {
   border-radius: .15rem;
   height: 3rem;
 }
-
 
 /*=== body-form ===*/
 
@@ -213,7 +203,6 @@ body {
 }
 
 .search-box-input {
-  /* height: 3rem; */
   width: 100%;
 }
 
@@ -331,7 +320,6 @@ body {
   flex-grow: 2;
   flex-direction: column;
   justify-content: center;
-
 }
 
 .idea-cards {
@@ -349,12 +337,6 @@ body {
   .header-text {
     font-size: 18px;
     padding: 10px;
-  }
-
-  .menu {
-    /* height: 40px;
-    text-align: center;
-    width: 100%; */
   }
 
   .idea-form {
@@ -415,7 +397,7 @@ body {
   }
 
   .header-text-wrapper {
-    width: 100%
+    width: 100%;
   }
 
   .filter-star-ideas {
@@ -429,7 +411,7 @@ body {
   }
 
   .filter-starred-ideas-wrapper {
-    width: 100%
+    width: 100%;
   }
 
   .menu-buttons-wrapper {

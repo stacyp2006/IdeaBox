@@ -7,6 +7,8 @@ var bubbleParent = document.querySelector('.purple-1');
 var ideaForm = document.querySelector('.idea-form');
 var allCards = document.querySelector('.all-cards');
 var deleteIcon = document.querySelector('.card-delete-icon')
+var favoriteStar = document.querySelector('favorite')
+var nonFavoriteStar = document.querySelector('non-favorite')
 
 var storage = [];
 
@@ -16,6 +18,7 @@ window.addEventListener('keypress', keyHandler);
 function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton();
   if (event.target.className === "card-delete-icon") deleteIdea();
+  if (event.target.className === "card-star-favorite-icon") favoriteToggle();
 }
 
 function keyHandler(event) {
@@ -36,8 +39,8 @@ function buildCard(obj) {
   allCards.insertAdjacentHTML('afterbegin',`
     <section class="card" data.id="${obj.id}">
       <section class="card-header">
-        <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
-        <img src="./img/star-active.svg" class="card-star-favorite-icon hidden" alt="star favorite">
+        <img src="./img/star.svg" class="card-star-favorite-icon non-favorite" alt="star favorite">
+        <img src="./img/star-active.svg" class="card-star-favorite-icon favorite hidden" alt="star favorite">
         <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
       </section>
       <section class="card-body">
@@ -80,6 +83,10 @@ function deleteIdea(){
       storage.splice(i,1);
     }
   }
+}
+
+function favoriteToggle () {
+  
 }
 
 //stop

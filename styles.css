@@ -199,6 +199,19 @@ body {
   font-size: 1.35rem;
 }
 
+.save-button:hover {
+  cursor: pointer;
+}
+
+.save-button.disabled {
+  background-color: #696969;
+  border: #696969;
+}
+
+.save-button.disabled:hover {
+  cursor: default;
+}
+
 /*=== search-form ===*/
 
 .search-icon {

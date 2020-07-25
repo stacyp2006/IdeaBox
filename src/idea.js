@@ -6,6 +6,7 @@ class Idea {
     this.star = false;
   }
   saveToStorage() {
-    storage.push(this)
+    // storage.push(this)
+    // localStorage.setItem(this.id, this)
   }
 }

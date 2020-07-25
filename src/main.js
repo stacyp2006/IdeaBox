@@ -6,14 +6,16 @@ var ideaText = document.querySelector('.card-idea-text');
 var bubbleParent = document.querySelector('.purple-1');
 var ideaForm = document.querySelector('.idea-form');
 var allCards = document.querySelector('.all-cards');
+var deleteIcon = document.querySelector('.card-delete-icon')
 
+var storage = [];
 
 bubbleParent.addEventListener('click', clickHandler);
 window.addEventListener('keypress', keyHandler);
-// window.addEventListener('load', keyHandler);
 
 function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton()
+  if (event.target.className === "card-delete-icon")
 }
 
 function keyHandler(event) {
@@ -22,15 +24,11 @@ function keyHandler(event) {
 }
 
 function saveIdeaButton() {
-  var obj = newIdeaInstantiation(titleInput.value, bodyInput.value)
+  var newIdea = new Idea (title, body)
   obj.saveToStorage()
   buildCard(obj)
   resetForm()
-}
-
-function newIdeaInstantiation(title, body) {
-  var newIdea = new Idea (title, body)
-  return newIdea
+  pushToStorage(obj)
 }
 
 
@@ -57,9 +55,9 @@ function buildCard(obj) {
   `)
 }
 
-// function displayCard(str) {
-//   allCards.insertAdjacentHTML('afterbegin', str)
-// }
+function pushToStorage(obj) {
+  storage.push(obj);
+}
 
 function resetForm() {
   titleInput.value = "";
@@ -73,7 +71,9 @@ function saveButtonDisable() {
   }
 }
 
-
+function deleteIdea(){
+  
+}
 
 
 //stop

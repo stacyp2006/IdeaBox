@@ -14,21 +14,21 @@ bubbleParent.addEventListener('click', clickHandler);
 window.addEventListener('keypress', keyHandler);
 
 function clickHandler(event) {
-  if (event.target.className === "save-button") saveIdeaButton()
-  if (event.target.className === "card-delete-icon")
+  if (event.target.className === "save-button") saveIdeaButton();
+  if (event.target.className === "card-delete-icon") deleteIdea();
 }
 
 function keyHandler(event) {
-  if (event.target.className === "title-input") saveButtonDisable()
-  if (event.target.className === "body-input") saveButtonDisable()
+  if (event.target.className === "title-input") saveButtonDisable();
+  if (event.target.className === "body-input") saveButtonDisable();
 }
 
 function saveIdeaButton() {
-  var newIdea = new Idea (title, body)
-  obj.saveToStorage()
-  buildCard(obj)
+  var newIdea = new Idea (titleInput.value, bodyInput.value)
+  newIdea.saveToStorage()
+  buildCard(newIdea)
   resetForm()
-  pushToStorage(obj)
+  pushToStorage(newIdea)
 }
 
 
@@ -75,7 +75,9 @@ function deleteIdea(){
   var deleteSelection = event.target.closest(".card")
   deleteSelection.remove();
   for (var i = 0; i < storage.length; i++) {
-    if (deleteSelectio.)
+    if (deleteSelection.dataset.id === `${storage[i].id}`) {
+      storage.splice(i,1);
+    }
   }
 }
 

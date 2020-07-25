@@ -17,6 +17,8 @@ function clickHandler(event) {
 function saveIdea() {
   ideaTitle.innerText = titleInput.value;
   ideaText.innerText = bodyInput.value;
+  titleInput.value = "";
+  bodyInput.value = "";
 }
 
 

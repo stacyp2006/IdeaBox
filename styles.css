@@ -257,8 +257,11 @@ body {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   border: 0.1rem solid #1F1F3D;
+
 }
 
 /*===*** subsection card-header idea-cards && all-cards ===*/
@@ -352,9 +355,9 @@ body {
 
 @media (min-width: 425px) and (max-width: 940px){
   .all-cards {
-    display: flex!important;
-    flex-direction: row!important;
-    flex-wrap: wrap!important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
   }
 

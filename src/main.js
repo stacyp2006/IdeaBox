@@ -24,6 +24,7 @@ function keyHandler(event) {
 }
 
 function saveIdea() {
+  newIdeaCard(titleInput.value, bodyInput.value)
   ideaTitle.innerText = titleInput.value;
   ideaText.innerText = bodyInput.value;
   titleInput.value = "";
@@ -37,6 +38,11 @@ function saveButtonDisable() {
   if (titleInput.value !== "" && bodyInput.value !== "") {
     saveButton.classList.remove("disabled");
   }
+}
+
+function newIdeaCard(title, body) {
+  var newIdea = new Idea (title, body)
+  console.log(newIdea)
 }
 
 

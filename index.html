@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 <body class="purple-1">
-  <section class="open-nav-filter" hidden>
+  <section class="open-nav-filter hidden">
     <section class="open-nav-top">
       <img src="./img/menu-close.svg" class="menu-nav-close-icon" alt="menu close x">
       <h1 class="header-text filter-idea-text">IdeaBox</h1>
@@ -21,11 +21,17 @@
   <!-- <section class="whole-filter-section"> -->
     <section class="menu purple-4">
       <img src="./img/menu.svg" class="menu-header-icon" alt="menu icon">
-      <h1 class="header-text">IdeaBox</h1>
-      <h4 class="filter-star-ideas">Filter Starred Ideas</h4>
-      <button type="button" name="button" class="show-starred-ideas">
-        Show Starred Ideas
-      </button>
+      <div class="header-text-wrapper">
+        <h1 class="header-text">IdeaBox</h1>
+      </div>
+      <section class="menu-buttons-wrapper">
+        <div class="filter-starred-ideas-wrapper">
+          <h4 class="filter-star-ideas">Filter Starred Ideas</h4>
+        </div>
+        <button type="button" name="button" class="show-starred-ideas">
+          Show Starred Ideas
+        </button>
+      </section>
     </section>
     <main class="ideas">
       <section class="idea-form purple-2">

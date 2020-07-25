@@ -12,6 +12,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  height: 100%
   /* position: relative; */
 }
 
@@ -49,6 +50,10 @@ body {
 
 /*=== open-nav-filter ===*/
 
+.hidden {
+  display: none!important;
+}
+
 .menu-nav-close-icon {
   width: 2.75rem;
   height: auto;
@@ -56,7 +61,7 @@ body {
 
 }
 
-.open-nav-filter hidden{
+.open-nav-filter {
   position: absolute;
   background: #1F1F3D;
   width: 100%;
@@ -97,7 +102,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.whole-filter-section hidden {
+.whole-filter-section {
   background-color: gray;
   opacity: 50%;
   width: 100%;
@@ -126,7 +131,7 @@ body {
   display: grid;
   width: 3rem;
   height: 2rem;
-  padding-top: 1rem;
+  padding-top: 0.25rem;
   padding-left: 0.25rem;
 }
 
@@ -249,7 +254,6 @@ body {
 .card {
   width: 100%;
   border: 0.1rem solid #1F1F3D;
-  margin-bottom: 1rem;
 }
 
 /*===*** subsection card-header idea-cards && all-cards ===*/
@@ -333,7 +337,7 @@ body {
 
 .idea-cards {
   flex-grow: 3;
-
+  overflow: auto;
 }
 
 /*=== media queries ===*/
@@ -356,6 +360,18 @@ body {
 
   .idea-form {
     flex-grow: 1;
+  }
+
+  .menu-buttons-wrapper {
+    display: none;
+  }
+
+  .header-text {
+    text-align: center;
+  }
+
+  .card {
+    margin-bottom: 2rem;
   }
 }
 
@@ -384,10 +400,9 @@ body {
   }
 
   .menu {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: flex-start;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 100%;
   }
 
@@ -398,7 +413,10 @@ body {
   .header-text {
     margin-top: 0.5rem;
     justify-self: flex-start;
-    border-bottom: 1px solid #353567;
+  }
+
+  .header-text-wrapper {
+    width: 100%
   }
 
   .filter-star-ideas {
@@ -407,12 +425,28 @@ body {
     font-family: 'Open Sans';
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     margin-left: 1rem;
   }
 
+  .filter-starred-ideas-wrapper {
+    width: 100%
+  }
+
+  .menu-buttons-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 0.1rem;
+    border-bottom: 0.1rem;
+    border-style: solid;
+    border-color: #5356A4;
+  }
+
   .show-starred-ideas {
-    display: grid;
     width: 90%;
     height: 3rem;
     border: 0.1rem solid #353567;
@@ -422,7 +456,6 @@ body {
     font-family: 'Open Sans';
     font-weight: 600;
     font-size: 1.35rem;
-    margin-left: 1rem;
   }
 
 
@@ -436,7 +469,9 @@ body {
     grid-template-columns: repeat(auto-fill, 20rem);
     grid-gap: 2.5%;
   }
-
-
-
+}
+@media (max-width: 980px) {
+  .show-starred-ideas {
+    font-size: 1.25rem;
+  }
 }

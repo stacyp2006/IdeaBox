@@ -12,7 +12,6 @@ var storage = [];
 bubbleParent.addEventListener('click', clickHandler);
 ideaForm.addEventListener('keypress', keyHandler);
 window.addEventListener('load', keyHandler);
-//saveButtonDisable();
 
 function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton()
@@ -26,7 +25,7 @@ function keyHandler(event) {
 function saveIdeaButton() {
   var obj = newIdeaInstantiation(titleInput.value, bodyInput.value)
   obj.saveToStorage()
-  displayCard(buildCard(obj))
+  buildCard(obj)
   resetForm()
 }
 
@@ -37,7 +36,8 @@ function newIdeaInstantiation(title, body) {
 
 
 function buildCard(obj) {
-  return ` <section class="card" id="${obj.id}">
+  var cardHTML =
+   ` <section class="card" id="${obj.id}">
     <section class="card-header">
       <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
       <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
@@ -54,12 +54,13 @@ function buildCard(obj) {
       <img src="./img/comment.svg" class="card-add-comment-icon" alt="add comment button">
       <p>Comment</p>
     </section>
-  </section>`
+  </section>`;
+  allCards.insertAdjacentHTML('afterbegin', cardHTML)
 }
 
-function displayCard(str) {
-  allCards.insertAdjacentHTML('afterbegin', str)
-}
+// function displayCard(str) {
+//   allCards.insertAdjacentHTML('afterbegin', str)
+// }
 
 function resetForm() {
   titleInput.value = "";

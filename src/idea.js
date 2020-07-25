@@ -5,4 +5,7 @@ class Idea {
     this.body = body;
     this.star = false;
   }
+  saveToStorage() {
+    storage.push(this)
+  }
 }

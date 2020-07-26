@@ -18,7 +18,7 @@ window.addEventListener('keypress', keyHandler);
 function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton();
   if (event.target.className === "card-delete-icon") deleteIdea();
-  if (event.target.className === "card-star-favorite-icon") favoriteToggle();
+  if (event.target.classList.contains("card-star-favorite-icon")) changeStarImage(event);
 }
 
 function keyHandler(event) {
@@ -85,8 +85,25 @@ function deleteIdea(){
   }
 }
 
-function favoriteToggle () {
-  
+function starIdeaButton() {
+
 }
+
+function changeStarImage(event) {
+  var visible = event.target.closest(".card-star-favorite-icon")
+  if (visible.includes(".favorite")) {
+  visible.classList("hidden")
+  invisible.classList.add("hidden")
+} else {
+  visible.classList.add("hidden")
+  invisible.classList.remove("hidden")
+}
+}
+
+function toggleFavorite() {
+
+}
+
+
 
 //stop

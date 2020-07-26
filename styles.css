@@ -154,6 +154,8 @@ body {
   height: 3rem;
   font-family: 'Open Sans';
   font-size: 1.25rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
 }
 
 /*=== body-form ===*/
@@ -180,6 +182,8 @@ body {
   height: 6rem;
   font-family: 'Open Sans';
   font-size: 1.25rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
 }
 
 /*=== save-form ===*/
@@ -225,6 +229,10 @@ body {
 
 .search-box-input {
   width: 100%;
+  font-family: 'Open Sans';
+  font-size: 1.25rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
 }
 
 .search-box-input::placeholder {
@@ -232,7 +240,6 @@ body {
   color: #a9aad2;
   font-size: 1.25rem;
   padding-left: 0.5rem;
-  padding-top: 0.4rem;
 }
 
 .search-section {

@@ -116,5 +116,10 @@ function openNav() {
   overlay.classList.remove('hidden');
 }
 
+function closeNav() {
+  mobileMenu.classList.add('hidden');
+  overlay.classList.add('hidden');
+}
+
 
 //stop

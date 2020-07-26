@@ -110,26 +110,6 @@ function toggleFavorite(event) {
     }
 
 }
-//   var favorite = event.target.closest(".card.id")
-//     for (var i = 0; i < storage.length; i++) {
-//       if (favorite.dataset.fav === false){
-//         storage[i].star = true;
-//     }else {
-//       storage[i].star = false;
-//     }
-//   }
-// }
-//   if(event.target.attributes.src.nodeValue === "./img/star-active.svg") {
-//     obj.star = true;
-//   } else {
-//       obj.star = false;
-//   }
-// }
-//
-// for (var i = 0; i < storage.length; i++) {
-//   if (deleteSelection.dataset.id === `${storage[i].id}`) {
-//     storage.splice(i,1);
-//   }
-// }
+
 
 //stop

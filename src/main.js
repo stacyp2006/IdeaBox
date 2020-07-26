@@ -37,7 +37,7 @@ function saveIdeaButton() {
 
 function buildCard(obj) {
   allCards.insertAdjacentHTML('afterbegin',`
-    <section class="card" data-fav="${obj.star}" data.id="${obj.id}">
+    <section class="card" data-fav="${obj.star}" id="${obj.id}">
       <section class="card-header">
         <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
         <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
@@ -78,7 +78,7 @@ function deleteIdea(){
   var deleteSelection = event.target.closest(".card")
   deleteSelection.remove();
   for (var i = 0; i < storage.length; i++) {
-    if (deleteSelection.dataset.id === `${storage[i].id}`) {
+    if (deleteSelection.id === `${storage[i].id}`) {
       storage.splice(i,1);
     }
   }
@@ -86,8 +86,7 @@ function deleteIdea(){
 
 function starIdeaButton() {
   changeStarImage(event)
-  toggleFavorite()
-  console.log(obj.star)
+  toggleFavorite(event)
 }
 
 function changeStarImage(event) {
@@ -99,14 +98,38 @@ function changeStarImage(event) {
 }
 
 
-function toggleFavorite() {
-  if(event.target.attributes.src.nodeValue === "./img/star-active.svg") {
-    obj.star = true;
-  } else {
-      obj.star = false;
-  }
+function toggleFavorite(event) {
+
+  var favorite = event.target.closest(".card")
+    for (var i = 0; i < storage.length; i++) {
+      console.log(storage[i].id)
+      console.log(favorite.id)
+      if(favorite.dataset.id === storage[i].id) {
+        storage[i].star = true;
+      }
+    }
+
 }
-
-
+//   var favorite = event.target.closest(".card.id")
+//     for (var i = 0; i < storage.length; i++) {
+//       if (favorite.dataset.fav === false){
+//         storage[i].star = true;
+//     }else {
+//       storage[i].star = false;
+//     }
+//   }
+// }
+//   if(event.target.attributes.src.nodeValue === "./img/star-active.svg") {
+//     obj.star = true;
+//   } else {
+//       obj.star = false;
+//   }
+// }
+//
+// for (var i = 0; i < storage.length; i++) {
+//   if (deleteSelection.dataset.id === `${storage[i].id}`) {
+//     storage.splice(i,1);
+//   }
+// }
 
 //stop

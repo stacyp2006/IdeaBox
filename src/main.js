@@ -18,7 +18,7 @@ window.addEventListener('keypress', keyHandler);
 function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton();
   if (event.target.className === "card-delete-icon") deleteIdea();
-  if (event.target.classList.contains("card-star-favorite-icon")) changeStarImage(event);
+  if (event.target.classList.contains("card-star-favorite-icon")) starIdeaButton();
 }
 
 function keyHandler(event) {
@@ -37,9 +37,10 @@ function saveIdeaButton() {
 
 function buildCard(obj) {
   allCards.insertAdjacentHTML('afterbegin',`
-    <section class="card" data.id="${obj.id}">
+    <section class="card" data-fav="${obj.star}" id="${obj.id}">
       <section class="card-header">
         <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
+        <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
       </section>
       <section class="card-body">
         <h3 class="card-idea-title">
@@ -77,37 +78,37 @@ function deleteIdea(){
   var deleteSelection = event.target.closest(".card")
   deleteSelection.remove();
   for (var i = 0; i < storage.length; i++) {
-    if (deleteSelection.dataset.id === `${storage[i].id}`) {
+    if (deleteSelection.id === `${storage[i].id}`) {
       storage.splice(i,1);
     }
   }
 }
 
 function starIdeaButton() {
-
+  changeStarImage(event)
+  toggleFavorite(event)
 }
 
 function changeStarImage(event) {
   if (event.target.attributes.src.nodeValue === "./img/star.svg") {
     event.target.attributes.src.nodeValue = "./img/star-active.svg"
   } else {
-    event.target.attributes.src.nodeValue = "./img/star.svg"
+      event.target.attributes.src.nodeValue = "./img/star.svg"
   }
-
-//   var visible = event.target.closest(".card-star-favorite-icon")
-//   if (visible.includes(".favorite")) {
-//   visible.classList("hidden")
-//   invisible.classList.add("hidden")
-// } else {
-//   visible.classList.add("hidden")
-//   invisible.classList.remove("hidden")
 }
 
 
-function toggleFavorite() {
-
+function toggleFavorite(event) {
+  var favorite = event.target.closest(".card")
+  for (var i = 0; i < storage.length; i++) {
+    if(favorite.id === `${storage[i].id}` && storage[i].star === false) {
+      storage[i].star = true;
+      } else if(favorite.id === `${storage[i].id}` && storage[i].star === true)
+      {
+        storage[i].star = false;
+    }
+  }
 }
-
 
 
 //stop

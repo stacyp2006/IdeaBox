@@ -111,7 +111,8 @@ function toggleFavorite(event) {
 }
 
 function openNav() {
-
+  mobileMenu.classList.remove('hidden');
+  overlay.classList.remove('hidden');
 }
 
 

@@ -357,7 +357,7 @@ body {
 
 /*=== media queries ===*/
 
-@media (min-width: 425px) and (max-width: 1014px){
+@media (min-width: 26.5rem) and (max-width: 64.2rem){
   .all-cards {
     display: flex;
     flex-direction: row;
@@ -372,7 +372,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 1015px) {
+@media only screen and (max-width: 64.2rem) {
   body {
     flex-direction: column;
   }
@@ -419,7 +419,7 @@ body {
   }
 } */
 
-@media (min-width: 1015px) {
+@media (min-width: 64.2rem) {
   body {
     display: grid;
     grid-template-columns: 1fr 3fr;

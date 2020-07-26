@@ -88,8 +88,7 @@ function starIdeaButton() {
 }
 
 function changeStarImage(event) {
-  var starIcon = event.target.attributes.src.nodeValue
-  if (starIcon === "./img/star.svg") {
+  if (event.target.attributes.src.nodeValue === "./img/star.svg") {
     event.target.attributes.src.nodeValue = "./img/star-active.svg"
   } else {
     event.target.attributes.src.nodeValue = "./img/star.svg"

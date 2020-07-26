@@ -7,6 +7,8 @@ var bubbleParent = document.querySelector('.purple-1');
 var ideaForm = document.querySelector('.idea-form');
 var allCards = document.querySelector('.all-cards');
 var deleteIcon = document.querySelector('.card-delete-icon')
+var favoriteStar = document.querySelector('favorite')
+var nonFavoriteStar = document.querySelector('non-favorite')
 
 var storage = [];
 
@@ -16,6 +18,7 @@ window.addEventListener('keypress', keyHandler);
 function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton();
   if (event.target.className === "card-delete-icon") deleteIdea();
+  if (event.target.classList.contains("card-star-favorite-icon")) changeStarImage(event);
 }
 
 function keyHandler(event) {
@@ -37,7 +40,6 @@ function buildCard(obj) {
     <section class="card" data.id="${obj.id}">
       <section class="card-header">
         <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
-        <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
       </section>
       <section class="card-body">
         <h3 class="card-idea-title">
@@ -80,5 +82,32 @@ function deleteIdea(){
     }
   }
 }
+
+function starIdeaButton() {
+
+}
+
+function changeStarImage(event) {
+  if (event.target.attributes.src.nodeValue === "./img/star.svg") {
+    event.target.attributes.src.nodeValue = "./img/star-active.svg"
+  } else {
+    event.target.attributes.src.nodeValue = "./img/star.svg"
+  }
+
+//   var visible = event.target.closest(".card-star-favorite-icon")
+//   if (visible.includes(".favorite")) {
+//   visible.classList("hidden")
+//   invisible.classList.add("hidden")
+// } else {
+//   visible.classList.add("hidden")
+//   invisible.classList.remove("hidden")
+}
+
+
+function toggleFavorite() {
+
+}
+
+
 
 //stop

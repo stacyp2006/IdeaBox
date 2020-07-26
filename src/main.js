@@ -35,19 +35,19 @@ function saveIdeaButton() {
 }
 
 
-function buildCard(obj) {
+function buildCard(newIdeaObject) {
   allCards.insertAdjacentHTML('afterbegin',`
-    <section class="card" data-fav="${obj.star}" id="${obj.id}">
+    <section class="card" data-fav="${newIdeaObject.star}" id="${newIdeaObject.id}">
       <section class="card-header">
         <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
         <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
       </section>
       <section class="card-body">
         <h3 class="card-idea-title">
-          ${obj.title}
+          ${newIdeaObject.title}
         </h3>
         <p class="card-idea-text">
-          ${obj.body}
+          ${newIdeaObject.body}
         </p>
       </section>
       <section class="card-footer">
@@ -58,8 +58,8 @@ function buildCard(obj) {
   `)
 }
 
-function pushToStorage(obj) {
-  storage.push(obj);
+function pushToStorage(newIdeaObject) {
+  storage.push(newIdeaObject);
 }
 
 function resetForm() {

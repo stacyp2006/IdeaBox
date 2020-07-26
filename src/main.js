@@ -39,9 +39,7 @@ function buildCard(obj) {
   allCards.insertAdjacentHTML('afterbegin',`
     <section class="card" data.id="${obj.id}">
       <section class="card-header">
-        <img src="./img/star.svg" class="card-star-favorite-icon non-favorite" alt="star favorite">
-        <img src="./img/star-active.svg" class="card-star-favorite-icon favorite hidden" alt="star favorite">
-        <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
+        <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
       </section>
       <section class="card-body">
         <h3 class="card-idea-title">
@@ -90,15 +88,22 @@ function starIdeaButton() {
 }
 
 function changeStarImage(event) {
-  var visible = event.target.closest(".card-star-favorite-icon")
-  if (visible.includes(".favorite")) {
-  visible.classList("hidden")
-  invisible.classList.add("hidden")
-} else {
-  visible.classList.add("hidden")
-  invisible.classList.remove("hidden")
+  var starIcon = event.target.attributes.src.nodeValue
+  if (starIcon === "./img/star.svg") {
+    event.target.attributes.src.nodeValue = "./img/star-active.svg"
+  } else {
+    event.target.attributes.src.nodeValue = "./img/star.svg"
+  }
+
+//   var visible = event.target.closest(".card-star-favorite-icon")
+//   if (visible.includes(".favorite")) {
+//   visible.classList("hidden")
+//   invisible.classList.add("hidden")
+// } else {
+//   visible.classList.add("hidden")
+//   invisible.classList.remove("hidden")
 }
-}
+
 
 function toggleFavorite() {
 

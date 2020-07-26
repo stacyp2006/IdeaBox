@@ -101,10 +101,9 @@ function changeStarImage(event) {
 function toggleFavorite(event) {
   var favorite = event.target.closest(".card")
   for (var i = 0; i < storage.length; i++) {
-    if(favorite.id === `${storage[i].id}` && storage[i].star === false) {
+    if (favorite.id === `${storage[i].id}` && !storage[i].star) {
       storage[i].star = true;
-      } else if(favorite.id === `${storage[i].id}` && storage[i].star === true)
-      {
+      } else if (favorite.id === `${storage[i].id}` && storage[i].star) {
         storage[i].star = false;
     }
   }

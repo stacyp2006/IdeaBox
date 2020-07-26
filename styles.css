@@ -226,8 +226,9 @@ body {
 .search-box-input::placeholder {
   font-family: 'Open Sans';
   color: #a9aad2;
-  font-size: 1rem;
+  font-size: 1.25rem;
   padding-left: 0.5rem;
+  padding-top: 0.4rem;
 }
 
 .search-section {
@@ -369,6 +370,10 @@ body {
     max-width: 20rem;
     width: 100%;
     margin: 1rem;
+  }
+  .idea-form {
+    padding-left: 15%;
+    padding-right: 15%;
   }
 }
 

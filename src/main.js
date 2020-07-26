@@ -6,9 +6,11 @@ var ideaText = document.querySelector('.card-idea-text');
 var bubbleParent = document.querySelector('.purple-1');
 var ideaForm = document.querySelector('.idea-form');
 var allCards = document.querySelector('.all-cards');
-var deleteIcon = document.querySelector('.card-delete-icon')
-var favoriteStar = document.querySelector('favorite')
-var nonFavoriteStar = document.querySelector('non-favorite')
+var deleteIcon = document.querySelector('.card-delete-icon');
+var menuHeaderIcon = document.querySelector('.menu-header-icon');
+var mobileMenu = document.querySelector('.open-nav-filter');
+var overlay = document.querySelector('.whole-filter-section');
+var closeIcon = document.querySelector('.menu-nav-close-icon');
 
 var storage = [];
 
@@ -19,6 +21,8 @@ function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton();
   if (event.target.className === "card-delete-icon") deleteIdea();
   if (event.target.classList.contains("card-star-favorite-icon")) starIdeaButton();
+  if (event.target.className === "menu-header-icon") openNav();
+  if (event.target.className === "menu-nav-close-icon") closeNav();
 }
 
 function keyHandler(event) {
@@ -33,7 +37,6 @@ function saveIdeaButton() {
   resetForm()
   pushToStorage(newIdea)
 }
-
 
 function buildCard(newIdeaObject) {
   allCards.insertAdjacentHTML('afterbegin',`
@@ -69,7 +72,7 @@ function resetForm() {
 }
 
 function saveButtonDisable() {
-  if (!titleInput.value && !bodyInput.value) {
+  if (titleInput.value !== "" && bodyInput.value !== "") {
     saveButton.classList.remove("disabled");
   }
 }
@@ -97,7 +100,6 @@ function changeStarImage(event) {
   }
 }
 
-
 function toggleFavorite(event) {
   var favorite = event.target.closest(".card")
   for (var i = 0; i < storage.length; i++) {
@@ -107,6 +109,11 @@ function toggleFavorite(event) {
         storage[i].star = false;
     }
   }
+}
+
+function openNav() {
+  mobileMenu.classList.remove('hidden');
+  overlay.classList.remove('hidden');
 }
 
 

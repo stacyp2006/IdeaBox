@@ -22,6 +22,7 @@ function clickHandler(event) {
   if (event.target.className === "card-delete-icon") deleteIdea();
   if (event.target.classList.contains("card-star-favorite-icon")) starIdeaButton();
   if (event.target.className === "menu-header-icon") openNav();
+  if (event.target.className === "menu-nav-close-icon") closeNav();
 }
 
 function keyHandler(event) {

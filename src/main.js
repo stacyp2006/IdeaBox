@@ -6,9 +6,8 @@ var ideaText = document.querySelector('.card-idea-text');
 var bubbleParent = document.querySelector('.purple-1');
 var ideaForm = document.querySelector('.idea-form');
 var allCards = document.querySelector('.all-cards');
-var deleteIcon = document.querySelector('.card-delete-icon')
-var favoriteStar = document.querySelector('favorite')
-var nonFavoriteStar = document.querySelector('non-favorite')
+var deleteIcon = document.querySelector('.card-delete-icon');
+var menuHeaderIcon = document.querySelector('.menu-header-icon');
 
 var storage = [];
 
@@ -19,6 +18,7 @@ function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton();
   if (event.target.className === "card-delete-icon") deleteIdea();
   if (event.target.classList.contains("card-star-favorite-icon")) starIdeaButton();
+  if ()
 }
 
 function keyHandler(event) {

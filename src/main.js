@@ -18,7 +18,7 @@ window.addEventListener('keypress', keyHandler);
 function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton();
   if (event.target.className === "card-delete-icon") deleteIdea();
-  if (event.target.classList.contains("card-star-favorite-icon")) changeStarImage(event);
+  if (event.target.classList.contains("card-star-favorite-icon")) starIdeaButton();
 }
 
 function keyHandler(event) {
@@ -37,7 +37,7 @@ function saveIdeaButton() {
 
 function buildCard(obj) {
   allCards.insertAdjacentHTML('afterbegin',`
-    <section class="card" data.id="${obj.id}">
+    <section class="card" data-fav="${obj.star}" data.id="${obj.id}">
       <section class="card-header">
         <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
         <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
@@ -85,28 +85,26 @@ function deleteIdea(){
 }
 
 function starIdeaButton() {
-
+  changeStarImage(event)
+  toggleFavorite()
+  console.log(obj.star)
 }
 
 function changeStarImage(event) {
   if (event.target.attributes.src.nodeValue === "./img/star.svg") {
     event.target.attributes.src.nodeValue = "./img/star-active.svg"
   } else {
-    event.target.attributes.src.nodeValue = "./img/star.svg"
+      event.target.attributes.src.nodeValue = "./img/star.svg"
   }
-
-//   var visible = event.target.closest(".card-star-favorite-icon")
-//   if (visible.includes(".favorite")) {
-//   visible.classList("hidden")
-//   invisible.classList.add("hidden")
-// } else {
-//   visible.classList.add("hidden")
-//   invisible.classList.remove("hidden")
 }
 
 
 function toggleFavorite() {
-
+  if(event.target.attributes.src.nodeValue === "./img/star-active.svg") {
+    obj.star = true;
+  } else {
+      obj.star = false;
+  }
 }
 
 

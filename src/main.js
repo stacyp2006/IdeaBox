@@ -6,7 +6,7 @@ var ideaText = document.querySelector('.card-idea-text');
 var bubbleParent = document.querySelector('.purple-1');
 var ideaForm = document.querySelector('.idea-form');
 var allCards = document.querySelector('.all-cards');
-var deleteIcon = document.querySelector('.card-delete-icon')
+var deleteIcon = document.querySelector('.card-delete-icon');
 
 var storage = [];
 
@@ -71,7 +71,7 @@ function saveButtonDisable() {
   }
 }
 
-function deleteIdea(){
+function deleteIdea() {
   var deleteSelection = event.target.closest(".card")
   deleteSelection.remove();
   for (var i = 0; i < storage.length; i++) {

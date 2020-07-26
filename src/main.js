@@ -69,7 +69,7 @@ function resetForm() {
 }
 
 function saveButtonDisable() {
-  if (!titleInput.value && !bodyInput.value) {
+  if (titleInput.value !== "" && bodyInput.value !== "") {
     saveButton.classList.remove("disabled");
   }
 }

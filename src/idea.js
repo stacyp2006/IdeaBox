@@ -5,25 +5,24 @@ class Idea {
     this.body = body;
     this.star = false;
   }
-  saveToStorage() { //we want this to stringify the object item and set to local storage
-    //var idString = this.id
-    console.log(localStorage.getItem("ideas"))
-    if (localStorage.getItem("ideas") !== null){
+  saveToStorage() {
+    if (localStorage.getItem("ideas") === null){
       var ideas = {};
     } else {
     var ideas = JSON.parse(localStorage.getItem("ideas"));
     }
-    //var ideas = {};
-    // if (ideas === undefined) {
-    //   ideas = {};
-    // } else {
-    //   JSON.parse(localStorage.getItem("ideas"));
-    // }
+
     ideas[this.id] = this
     var stringifiedIdea = JSON.stringify(ideas);
     localStorage.setItem("ideas", stringifiedIdea);
+    console.log(Object.keys(ideas))
   }
 }
-//if ideas is  undefined then {}
-//ls {ideas {this.id newIdeaObject}}
-//title, body
+// make a funtion thath pulls out of loacl storage
+// then we need to get the key not the cheese
+// loop thorugh the array of keys
+// uses those keys to target the obj
+// build cards based on those object
+// add those objects to our data set but pushing
+//
+// side note we need to fix out delete

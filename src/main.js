@@ -13,9 +13,13 @@ var overlay = document.querySelector('.whole-filter-section');
 var closeIcon = document.querySelector('.menu-nav-close-icon');
 
 var storage = [];
-
 bubbleParent.addEventListener('click', clickHandler);
 window.addEventListener('keypress', keyHandler);
+window.addEventListener('load', loadHandler);
+
+function loadHandler(){
+  console.log("Hello World");
+}
 
 function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton();

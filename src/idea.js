@@ -15,9 +15,11 @@ class Idea {
     ideas[this.id] = this
     var stringifiedIdea = JSON.stringify(ideas);
     localStorage.setItem("ideas", stringifiedIdea);
+    var keys = Object.keys(ideas);
+    for (var i = 0; i < keys.length; i++) {
+      console.log(keys[i])
+      console.log(ideas[keys[i]])
 
-    for (var i = 0; i < Object.keys(ideas).length; i++) {
-         console.log(Object.keys(ideas)[i])
       }
 
     //console.log(Object.keys(ideas).length)

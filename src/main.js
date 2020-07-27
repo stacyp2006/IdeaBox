@@ -18,7 +18,8 @@ window.addEventListener('keypress', keyHandler);
 window.addEventListener('load', loadHandler);
 
 function loadHandler(){
-  console.log("Hello World");
+  localStoragePush()
+  populateCards()
 }
 
 function clickHandler(event) {
@@ -69,9 +70,21 @@ function pushToStorage(newIdeaObject) {
   storage.push(newIdeaObject);
 }
 
-function localStoragePush(oldIdeasObject) {
-  for (var i = 0; i < Object.keys(ideas).length; i++) {
-    storage.push(Object.keys(ideas)[i])
+function localStoragePush() {
+  if (localStorage.getItem("ideas") === null){
+    var ideas = {};
+  } else {
+  var ideas = JSON.parse(localStorage.getItem("ideas"));
+  }
+  var keys = Object.keys(ideas)
+  for (var i = 0; i < keys.length; i++) {
+    storage.push(ideas[keys[i]])
+  }
+}
+
+function populateCards(){
+  for (var i = 0; i < storage.length; i++) {
+    buildCard(storage[i])
   }
 }
 
@@ -130,6 +143,3 @@ function closeNav() {
   mobileMenu.classList.add('hidden');
   overlay.classList.add('hidden');
 }
-
-
-//stop

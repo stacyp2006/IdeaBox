@@ -69,9 +69,11 @@ function pushToStorage(newIdeaObject) {
   storage.push(newIdeaObject);
 }
 
-function localStoragePush(oldIdeasObject) {
-
-}
+// function localStoragePush(oldIdeasObject) {
+//   for (var i = 0; i < Object.keys(ideas).length; i++) {
+//     storage.push(Object.keys(ideas))
+//   }
+// }
 
 function resetForm() {
   titleInput.value = "";

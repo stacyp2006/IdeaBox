@@ -15,7 +15,14 @@ class Idea {
     ideas[this.id] = this
     var stringifiedIdea = JSON.stringify(ideas);
     localStorage.setItem("ideas", stringifiedIdea);
-    console.log(Object.keys(ideas))
+
+    for (var i = 0; i < Object.keys(ideas).length; i++) {
+         console.log(Object.keys(ideas)[i])
+      }
+
+    //console.log(Object.keys(ideas).length)
+    // storage.push(54165151.obj)
+    // storage loop to build new card
   }
 }
 // make a funtion thath pulls out of loacl storage

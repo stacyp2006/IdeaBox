@@ -6,7 +6,21 @@ class Idea {
     this.star = false;
   }
   saveToStorage() {
-    // storage.push(this)
-    // localStorage.setItem(this.id, this)
+    if (localStorage.getItem("ideas") === null){
+      var ideas = {};
+    } else {
+     var ideas = JSON.parse(localStorage.getItem("ideas"));
+    }
+
+    ideas[this.id] = this
+    var stringifiedIdea = JSON.stringify(ideas);
+    localStorage.setItem("ideas", stringifiedIdea);
+    var keys = Object.keys(ideas);
+    for (var i = 0; i < keys.length; i++) {
+      // console.log(keys[i])
+      // console.log(ideas[keys[i]])
+      buildCard(ideas[keys[i]])
+
+    }
   }
 }

@@ -13,9 +13,14 @@ var overlay = document.querySelector('.whole-filter-section');
 var closeIcon = document.querySelector('.menu-nav-close-icon');
 
 var storage = [];
-
 bubbleParent.addEventListener('click', clickHandler);
 window.addEventListener('keypress', keyHandler);
+window.addEventListener('load', loadHandler);
+
+function loadHandler(){
+  localStoragePush()
+  populateCards()
+}
 
 function clickHandler(event) {
   if (event.target.className === "save-button") saveIdeaButton();
@@ -40,7 +45,7 @@ function saveIdeaButton() {
 
 function buildCard(newIdeaObject) {
   allCards.insertAdjacentHTML('afterbegin',`
-    <section class="card" data-fav="${newIdeaObject.star}" id="${newIdeaObject.id}">
+    <section class="card" data-fav="${newIdeaObject.star}" data-id="${newIdeaObject.id}">
       <section class="card-header">
         <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
         <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
@@ -65,6 +70,24 @@ function pushToStorage(newIdeaObject) {
   storage.push(newIdeaObject);
 }
 
+function localStoragePush() {
+  if (localStorage.getItem("ideas") === null){
+    var ideas = {};
+  } else {
+  var ideas = JSON.parse(localStorage.getItem("ideas"));
+  }
+  var keys = Object.keys(ideas)
+  for (var i = 0; i < keys.length; i++) {
+    storage.push(ideas[keys[i]])
+  }
+}
+
+function populateCards(){
+  for (var i = 0; i < storage.length; i++) {
+    buildCard(storage[i])
+  }
+}
+
 function resetForm() {
   titleInput.value = "";
   bodyInput.value = "";
@@ -81,7 +104,7 @@ function deleteIdea() {
   var deleteSelection = event.target.closest(".card")
   deleteSelection.remove();
   for (var i = 0; i < storage.length; i++) {
-    if (deleteSelection.id === `${storage[i].id}`) {
+    if (deleteSelection.dataset.id === `${storage[i].id}`) {
       storage.splice(i,1);
     }
   }
@@ -103,9 +126,9 @@ function changeStarImage(event) {
 function toggleFavorite(event) {
   var favorite = event.target.closest(".card")
   for (var i = 0; i < storage.length; i++) {
-    if (favorite.id === `${storage[i].id}` && !storage[i].star) {
+    if (favorite.dataset.id === `${storage[i].id}` && !storage[i].star) {
       storage[i].star = true;
-      } else if (favorite.id === `${storage[i].id}` && storage[i].star) {
+    } else if (favorite.dataset.id === `${storage[i].id}` && storage[i].star) {
         storage[i].star = false;
     }
   }
@@ -120,6 +143,3 @@ function closeNav() {
   mobileMenu.classList.add('hidden');
   overlay.classList.add('hidden');
 }
-
-
-//stop

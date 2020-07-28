@@ -13,6 +13,7 @@ var overlay = document.querySelector('.whole-filter-section');
 var closeIcon = document.querySelector('.menu-nav-close-icon');
 
 var storage = [];
+
 bubbleParent.addEventListener('click', clickHandler);
 window.addEventListener('keyup', keyHandler);
 window.addEventListener('load', loadHandler);
@@ -37,10 +38,10 @@ function keyHandler(event) {
 
 function saveIdeaButton() {
   var newIdea = new Idea (titleInput.value, bodyInput.value)
-  newIdea.saveToStorage()
   buildCard(newIdea)
   resetForm()
   pushToStorage(newIdea)
+  newIdea.saveToStorage()
 }
 
 function buildCard(newIdeaObject) {
@@ -66,7 +67,6 @@ function buildCard(newIdeaObject) {
   `)
 }
 
-
 function setStar(newIdeaObject) {
   if (newIdeaObject.star === true) {
   return './img/star-active.svg'
@@ -80,6 +80,7 @@ function pushToStorage(newIdeaObject) {
 }
 
 function localStoragePush() {
+  // pullIdeasStorage()
   if (localStorage.getItem("ideas") === null){
     var ideas = {};
   } else {
@@ -90,6 +91,14 @@ function localStoragePush() {
     storage.push(ideas[keys[i]])
   }
 }
+
+// function pullIdeasStorage() {
+//   if (localStorage.getItem("ideas") === null){
+//     var ideas = {};
+//   } else {
+//   var ideas = JSON.parse(localStorage.getItem("ideas"));
+//   }
+// }
 
 function populateCards(){
   for (var i = 0; i < storage.length; i++) {
@@ -122,13 +131,14 @@ function deleteIdea() {
 function starIdeaButton() {
   changeStarImage(event)
   toggleFavorite(event)
+  newIdeaObject.updateIdea()
 }
 
 function changeStarImage(event) {
   if (event.target.attributes.src.nodeValue === "./img/star.svg") {
     event.target.attributes.src.nodeValue = "./img/star-active.svg"
   } else {
-      event.target.attributes.src.nodeValue = "./img/star.svg"
+    event.target.attributes.src.nodeValue = "./img/star.svg"
   }
 }
 

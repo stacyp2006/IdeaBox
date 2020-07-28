@@ -14,7 +14,7 @@ var closeIcon = document.querySelector('.menu-nav-close-icon');
 
 var storage = [];
 bubbleParent.addEventListener('click', clickHandler);
-window.addEventListener('keypress', keyHandler);
+window.addEventListener('keyup', keyHandler);
 window.addEventListener('load', loadHandler);
 
 function loadHandler(){
@@ -104,7 +104,7 @@ function resetForm() {
 }
 
 function saveButtonDisable() {
-  if (titleInput.value !== "" && bodyInput.value !== "") {
+  if (titleInput.value.trim() !== "" && bodyInput.value.trim() !== "") {
     saveButton.classList.remove("disabled");
   }
 }

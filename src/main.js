@@ -88,6 +88,7 @@ function localStoragePush() {
   storage = ideas;
 }
 
+
 function populateCards(){
   for (var i = 0; i < storage.length; i++) {
     buildCard(storage[i])
@@ -106,12 +107,19 @@ function saveButtonDisable() {
   }
 }
 
+// function deleteIdeaButton() {
+//   var id = event.target.closest(".card").dataset.id
+//   deleteIdea();
+//   storage[+(event.target.closest(".card").dataset.id)].deleteFromStorage();
+// }
+
 function deleteIdea() {
   var deleteSelection = event.target.closest(".card")
   deleteSelection.remove();
   for (var i = 0; i < storage.length; i++) {
     if (deleteSelection.dataset.id === `${storage[i].id}`) {
-      storage.splice(i,1);
+      storage[i].deleteFromStorage();
+      storage.splice(i,1);  
     }
   }
 }

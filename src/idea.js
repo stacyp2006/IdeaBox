@@ -12,8 +12,24 @@ class Idea {
   }
 
   deleteFromStorage() {
-    //delete an object out of the data model and immediately update local storage; add saveToStorage here?
+    var memory = JSON.parse(localStorage.getItem('ideas'));
+    for (var i = 0; i < memory.length; i++) {
+      if (this.id == memory[i].id) {
+        memory.splice(i,1);
+      }
+    }
+    var stringStorage = JSON.stringify(memory);
+    localStorage.setItem('ideas', stringStorage);
   }
+
+
+    // var deleteSelection = event.target.closest(".card");
+    // for (var i = 0; i < storage.length; i++) {
+    //   if (deleteSelection.dataset.id === `${storage[i].id}`) {
+    //     localStorage.remove(storage[i]);
+    //   }
+    // }
+
 
   updateIdea() {
 

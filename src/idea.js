@@ -15,12 +15,5 @@ class Idea {
     ideas[this.id] = this
     var stringifiedIdea = JSON.stringify(ideas);
     localStorage.setItem("ideas", stringifiedIdea);
-    var keys = Object.keys(ideas);
-    for (var i = 0; i < keys.length; i++) {
-      // console.log(keys[i])
-      // console.log(ideas[keys[i]])
-      buildCard(ideas[keys[i]])
-
-    }
   }
 }

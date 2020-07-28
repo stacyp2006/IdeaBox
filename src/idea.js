@@ -11,10 +11,6 @@ class Idea {
     localStorage.setItem('ideas', stringStorage);
   }
 
-  retrieveIdeas() {
-    //this fxn will retrieve the ideas string from local storage and parse the string back into an array of object literals and set that array equal to storage array. Or possibly push to local storage
-  }
-
   deleteFromStorage() {
     //delete an object out of the data model and immediately update local storage; add saveToStorage here?
   }

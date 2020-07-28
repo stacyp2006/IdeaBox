@@ -13,6 +13,7 @@ var overlay = document.querySelector('.whole-filter-section');
 var closeIcon = document.querySelector('.menu-nav-close-icon');
 
 var storage = [];
+
 bubbleParent.addEventListener('click', clickHandler);
 window.addEventListener('keyup', keyHandler);
 window.addEventListener('load', loadHandler);
@@ -37,10 +38,10 @@ function keyHandler(event) {
 
 function saveIdeaButton() {
   var newIdea = new Idea (titleInput.value, bodyInput.value)
-  newIdea.saveToStorage()
   buildCard(newIdea)
   resetForm()
   pushToStorage(newIdea)
+  newIdea.saveToStorage()
 }
 
 function buildCard(newIdeaObject) {
@@ -66,7 +67,6 @@ function buildCard(newIdeaObject) {
   `)
 }
 
-
 function setStar(newIdeaObject) {
   if (newIdeaObject.star === true) {
   return './img/star-active.svg'
@@ -80,16 +80,14 @@ function pushToStorage(newIdeaObject) {
 }
 
 function localStoragePush() {
-  if (localStorage.getItem("ideas") === null){
-    var ideas = {};
+  if (localStorage.getItem("ideas") === null) {
+    var ideas = [];
   } else {
-  var ideas = JSON.parse(localStorage.getItem("ideas"));
-  }
-  var keys = Object.keys(ideas)
-  for (var i = 0; i < keys.length; i++) {
-    storage.push(ideas[keys[i]])
-  }
+    var ideas = JSON.parse(localStorage.getItem("ideas"));
+  };
+  storage = ideas;
 }
+
 
 function populateCards(){
   for (var i = 0; i < storage.length; i++) {
@@ -109,12 +107,19 @@ function saveButtonDisable() {
   }
 }
 
+// function deleteIdeaButton() {
+//   var id = event.target.closest(".card").dataset.id
+//   deleteIdea();
+//   storage[+(event.target.closest(".card").dataset.id)].deleteFromStorage();
+// }
+
 function deleteIdea() {
   var deleteSelection = event.target.closest(".card")
   deleteSelection.remove();
   for (var i = 0; i < storage.length; i++) {
     if (deleteSelection.dataset.id === `${storage[i].id}`) {
-      storage.splice(i,1);
+      storage[i].deleteFromStorage();
+      storage.splice(i,1);  
     }
   }
 }
@@ -122,13 +127,14 @@ function deleteIdea() {
 function starIdeaButton() {
   changeStarImage(event)
   toggleFavorite(event)
+  newIdeaObject.updateIdea()
 }
 
 function changeStarImage(event) {
   if (event.target.attributes.src.nodeValue === "./img/star.svg") {
     event.target.attributes.src.nodeValue = "./img/star-active.svg"
   } else {
-      event.target.attributes.src.nodeValue = "./img/star.svg"
+    event.target.attributes.src.nodeValue = "./img/star.svg"
   }
 }
 

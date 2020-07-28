@@ -47,7 +47,7 @@ function buildCard(newIdeaObject) {
   allCards.insertAdjacentHTML('afterbegin',`
     <section class="card" data-fav="${newIdeaObject.star}" data-id="${newIdeaObject.id}">
       <section class="card-header">
-        <img src="./img/star.svg" class="card-star-favorite-icon" alt="star favorite">
+        <img src="${setStar(newIdeaObject)}" class="card-star-favorite-icon" alt="star favorite">
         <img src="./img/delete.svg" class="card-delete-icon" alt="delete button">
       </section>
       <section class="card-body">
@@ -64,6 +64,15 @@ function buildCard(newIdeaObject) {
       </section>
     </section>
   `)
+}
+
+
+function setStar(newIdeaObject) {
+  if (newIdeaObject.star === true) {
+  return './img/star-active.svg'
+  } else {
+  return './img/star.svg'
+  }
 }
 
 function pushToStorage(newIdeaObject) {

@@ -115,35 +115,35 @@ function deleteIdea() {
     if (deleteSelection.dataset.id === `${storage[i].id}`) {
       var deletedIdea = storage[i];
       storage.splice(i,1);
-      console.log(deletedIdea);
       deletedIdea.deleteFromStorage(storage);
     };
   };
 }
 
 function starIdeaButton() {
-  changeStarImage(event)
-  toggleFavorite(event)
-  newIdeaObject.updateIdea()
+  changeStarImage(event);
+  toggleFavorite(event);
 }
 
 function changeStarImage(event) {
   if (event.target.attributes.src.nodeValue === "./img/star.svg") {
-    event.target.attributes.src.nodeValue = "./img/star-active.svg"
+    event.target.attributes.src.nodeValue = "./img/star-active.svg";
   } else {
-    event.target.attributes.src.nodeValue = "./img/star.svg"
-  }
+    event.target.attributes.src.nodeValue = "./img/star.svg";
+  };
 }
 
 function toggleFavorite(event) {
-  var favorite = event.target.closest(".card")
+  var favorite = event.target.closest(".card");
   for (var i = 0; i < storage.length; i++) {
     if (favorite.dataset.id === `${storage[i].id}` && !storage[i].star) {
       storage[i].star = true;
-    } else if (favorite.dataset.id === `${storage[i].id}` && storage[i].star) {
-        storage[i].star = false;
-    }
-  }
+      storage[i].updateIdea(storage);
+    } else {
+      storage[i].star = false;
+      storage[i].updateIdea(storage);
+    };
+  };
 }
 
 function openNav() {

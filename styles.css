@@ -94,6 +94,8 @@ body {
 
 .show-starred-ideas:hover {
   cursor: pointer;
+  animation: pulse 5s infinite;
+  border-color: #b29dc9;
 }
 
 .filter-star-ideas {
@@ -221,6 +223,20 @@ body {
 
 .save-button:hover {
   cursor: pointer;
+  animation: pulse 5s infinite;
+  border-color: #ffffff;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0.25rem #e8c7ff;
+  }
+  50% {
+    box-shadow: 0 0 0.5rem #e8c7ff;
+  }
+  100% {
+    box-shadow: 0 0 0.25rem #e8c7ff;
+  }
 }
 
 .save-button.disabled {
@@ -230,6 +246,8 @@ body {
 
 .save-button.disabled:hover {
   cursor: default;
+  animation: 0;
+  border-color: none;
 }
 
 /*=== search-form ===*/

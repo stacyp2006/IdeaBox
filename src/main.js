@@ -134,7 +134,7 @@ function deleteIdea() {
   };
 }
 
-function starIdeaButton(event) {
+function starIdeaButton() {
   changeStarImage(event);
   toggleFavorite(event);
 }

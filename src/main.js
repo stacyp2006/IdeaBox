@@ -12,6 +12,7 @@ var mobileMenu = document.querySelector('.open-nav-filter');
 var overlay = document.querySelector('.whole-filter-section');
 var closeIcon = document.querySelector('.menu-nav-close-icon');
 var showStarredButton = document.querySelectorAll('.show-starred-ideas');
+var searchInput = document.querySelector('.search-box-input');
 
 var storage = [];
 
@@ -19,7 +20,7 @@ bubbleParent.addEventListener('click', clickHandler);
 window.addEventListener('keyup', keyHandler);
 window.addEventListener('load', loadHandler);
 
-function loadHandler(){
+function loadHandler() {
   localStoragePush()
   populateCards()
 }
@@ -36,10 +37,11 @@ function clickHandler(event) {
 function keyHandler(event) {
   if (event.target.className === "title-input") saveButtonDisable();
   if (event.target.className === "body-input") saveButtonDisable();
+  if (event.target.className === "search-box-input") searchFilter();
 }
 
 function saveIdeaButton() {
-  var newIdea = new Idea (titleInput.value, bodyInput.value)
+  var newIdea = new Idea(titleInput.value, bodyInput.value)
   buildCard(newIdea)
   resetForm()
   pushToStorage(newIdea)
@@ -47,7 +49,7 @@ function saveIdeaButton() {
 }
 
 function buildCard(newIdeaObject) {
-  allCards.insertAdjacentHTML('afterbegin',`
+  allCards.insertAdjacentHTML('afterbegin', `
     <section class="card" data-fav="${newIdeaObject.star}" data-id="${newIdeaObject.id}">
       <section class="card-header">
         <img src="${setStar(newIdeaObject)}" class="card-star-favorite-icon" alt="star favorite">
@@ -71,9 +73,9 @@ function buildCard(newIdeaObject) {
 
 function setStar(newIdeaObject) {
   if (newIdeaObject.star === true) {
-  return './img/star-active.svg'
+    return './img/star-active.svg'
   } else {
-  return './img/star.svg'
+    return './img/star.svg'
   }
 }
 
@@ -85,14 +87,14 @@ function localStoragePush() {
   if (localStorage.key("ideas")) {
     var ideas = JSON.parse(localStorage.getItem("ideas")) || [];
     for (var i = 0; i < ideas.length; i++) {
-      var currentCard = new Idea (ideas[i].title, ideas[i].body, ideas[i].star);
+      var currentCard = new Idea(ideas[i].title, ideas[i].body, ideas[i].star);
       currentCard.id = ideas[i].id;
       storage.push(currentCard);
     }
   }
 }
 
-function populateCards(){
+function populateCards() {
   for (var i = 0; i < storage.length; i++) {
     buildCard(storage[i])
   }
@@ -110,13 +112,23 @@ function saveButtonDisable() {
   }
 }
 
+function searchFilter() {
+  allCards.innerHTML = "";
+  for (var i = 0; i < storage.length; i++) {
+    if (storage[i].title.includes(searchInput.value) ||
+      storage[i].body.includes(searchInput.value)) {
+        buildCard(storage[i]);
+    };
+  }
+}
+
 function deleteIdea() {
   var deleteSelection = event.target.closest(".card");
   deleteSelection.remove();
   for (var i = 0; i < storage.length; i++) {
     if (deleteSelection.dataset.id === `${storage[i].id}`) {
       var deletedIdea = storage[i];
-      storage.splice(i,1);
+      storage.splice(i, 1);
       deletedIdea.deleteFromStorage(storage);
     };
   };
@@ -140,11 +152,10 @@ function toggleFavorite(event) {
   for (var i = 0; i < storage.length; i++) {
     if (favorite.dataset.id === `${storage[i].id}` && !storage[i].star) {
       storage[i].star = true;
-      storage[i].updateIdea(storage);
     } else if (favorite.dataset.id === `${storage[i].id}` && storage[i].star) {
       storage[i].star = false;
-      storage[i].updateIdea(storage);
     };
+    storage[i].updateIdea(storage);
   };
 }
 

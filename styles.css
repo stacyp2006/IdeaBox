@@ -303,9 +303,17 @@ body {
   height: auto;
 }
 
+.card-star-favorite-icon:hover {
+  cursor: pointer;
+}
+
 .card-delete-icon {
   width: 2.5rem;
   height: auto;
+}
+
+.card-delete-icon:hover {
+  cursor: pointer;
 }
 
 /*===*** subsection card-body idea-cards && all-cards ===*/

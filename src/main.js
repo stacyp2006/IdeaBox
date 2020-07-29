@@ -40,6 +40,10 @@ function keyHandler(event) {
   if (event.target.className === "search-box-input") searchFilter();
 }
 
+function mouseOverHandler(event) {
+
+}
+
 function saveIdeaButton() {
   var newIdea = new Idea(titleInput.value, bodyInput.value)
   buildCard(newIdea)
@@ -160,7 +164,6 @@ function toggleFavorite(event) {
 }
 
 function starHandler() {
-  console.log(showStarredButton[0].innerText);
   if (showStarredButton[0].innerText === "Show All Ideas") {
     restoreIdeas();
   } else {

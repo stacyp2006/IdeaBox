@@ -57,6 +57,7 @@ body {
 
 .menu-nav-close-icon:hover {
   cursor: pointer;
+  opacity: 80%
 }
 
 .open-nav-filter {
@@ -142,6 +143,7 @@ body {
 
 .menu-header-icon:hover {
   cursor: pointer;
+  opacity: 80%
 }
 
 /*=== title-form ===*/
@@ -224,7 +226,7 @@ body {
 .save-button:hover {
   cursor: pointer;
   animation: pulse 5s infinite;
-  border-color: #ffffff;
+  border-color: #ebecff;
 }
 
 @keyframes pulse {

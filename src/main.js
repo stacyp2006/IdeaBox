@@ -139,7 +139,7 @@ function toggleFavorite(event) {
     if (favorite.dataset.id === `${storage[i].id}` && !storage[i].star) {
       storage[i].star = true;
       storage[i].updateIdea(storage);
-    } else {
+    } else if (favorite.dataset.id === `${storage[i].id}` && storage[i].star) {
       storage[i].star = false;
       storage[i].updateIdea(storage);
     };

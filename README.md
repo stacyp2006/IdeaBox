@@ -1,12 +1,14 @@
 # Ideabox Group Project
 
-Every developer has more ideas than time. As David Allen likes to say "the human brain is for creating ideas, not remembering them." In this project, we'll be building an application a new client that records and archives our ideas (good and bad alike).
+Every developer has more ideas than time. As David Allen likes to say "the human brain is for creating ideas, not remembering them." In this project, we built an application that allows a user to record and archive their ideas (good and bad alike).
 
-Throughout the project, one of our focuses will be on providing a fluid and responsive client-side interface. To this end, we'll rely on JavaScript and to implement snappy filtering in the browser, and `localStorage` to persist our wonderful ideas between sessions.  Our goal is to also incorporate an agile workflow by incorporating two weekly sprints.
+Throughout the project, one of our focuses was on providing a fluid and responsive client-side interface. To this end, we relied on JavaScript, implemented snappy filtering in the browser, and `localStorage` to persist our wonderful ideas between sessions. HTML and CSS were utilized to provide structure and styling to the page. 
 
-*Note*: Expectations listed for Iteration 0-1 should be complete by your first check-in. No JavaScript should be written before that check-in, unless you get approval to move ahead with functionality from your Project Manager.
+Our final result is an application that allows a user to create an "Idea Card," store the card, "favorite" the card, display the favorites, search the collection of cards based on user-defined search terms, and delete the idea from the collection. This is responsive on mobile, tablet and desktop screens. 
 
 ## Learning Goals
+
+### Group Learning Goals
 
 * Continue to improve on building responsive client-side applications with good user feedback
 * Understand how to implement client-side data persistence using `localStorage`
@@ -15,235 +17,143 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 * Incorporate & iterate over arrays in order to filter what is being displayed
 * Craft code with clean style, using small functions that show trends toward DRYness and SRP
 
-## Setup
+### Individual Learning Goals
 
-- Complete a DTR
-- Create a slack channel for all team members and your Project Manager.
-- Fork [the boilerplate
-  repository](https://github.com/turingschool-examples/ideabox-boilerplate). Add all team members and your Project Manager as collaborators.
-- Deploy your application to GitHub Pages.
-- In the team channel, drop the repo link and GitHub pages link.
+* Caleb: Gain a deeper understanding with CSS.
+  * Result: I feel as though I have a strong understanding of CSS, it's formatting, conventions, and implementation. I can implement flex-box and grid, and I know the different applications of each.
 
-## Progression
+* Mike: Interacting HTML with JS. Continuing to understand DRY code. Using Style Guide for HMTL.
+  * Result: Personally, I had a ton of growth in this project from the last project in the HTML as well as CSS and JS. I Also, I found that I had a new goal which was to understand localStorage. I think the pre-lesson that we did with my mentor, Nathaniel, although rough went a long way in my understanding during the in-class lesson on localStorage. We also got to play with a ton of event bubblin’ which helped me grasp the concept a lot more on how to best interact with HTML and JS. I also had a big lesson on letting code go that I held near to me in respect for code that was cleaner and much more DRY.
 
-### Iteration 0 - Mobile Layout
+* Stacy: Continue to work toward understanding DRY code. Gain deeper understanding HTML/CSS. Improve Git Workflow habits.
+    * Result: I definitely feel like I have gained more automaticity with the Git Workflow. My commits on this project were much more meaningful and frequent than past projects. We also experienced our first merge conflict on this project, so it was helpful to see how that process works. I really enjoyed gaining more skills with HTML/CSS. Particularly with CSS, being able to add visually interesting features like different cursor types and hover states was fun. I think DRY code will always be a work in progress to some degree, but I definitely feel more able to recognize redundancies and refactor them after this project. I also recognize the necessity on occasion to get something to work first and then refactor it so it's DRY later. As always, there were also learning points with the new concepts introduced in the project like event bubbling and localStorage.
 
-Plan then write the HTML and CSS so that your application matches this comp. Based on what you are building, you can anticipate that the Idea "cards" will not always be there on page load, but for now, they should.
+## Overview of Technology Used
 
-Use the same text on your cards that is used in the spec so you can ensure your spacing/sizing is accurate.
+### Workflow Tools Used
 
-Full mobile layout:
+* A DTR was established to set group norms and expectations. (link here)
+* Wireframe(https://i.imgur.com/JTflp1L.png)
+* GitHub was used to host our project repository and allow us to share and review code.
+* Slack, Tuple and Zoom were all used for group communication and meetings. 
+
+### Programmming Technology
+
+* HTML
+  * Used to provide the general structure of our website
+  * Challenges: 
+    * The original link for the font provided in the comp wasn't quite as functional as we would have liked. 
+    * There were a couple challenges with hidden classes and getting them to work properly between the CSS/HTML.
+    * Accessing both Show Starred Idea buttons to make changes via innerText was a challenge initially. 
+  * Wins: 
+    * We searched up a better link for the font that enabled us to have the styling we wanted in CSS. 
+    * Ordering our HTML properly and using wrappers helped up get the header/nav section to render properly in both the mobile and desktop views. 
+    
+* CSS 
+  * Used to provide styling to our website. 
+  * Challenges: 
+    * Understanding which colors to use where based on the comp was at times tricky. 
+    * Getting the gray overlay to extend the length of the screen on mobile view was a challenge. 
+    * Disabling the save button was a new skill.  
+  * Wins:
+    * We enjoyed adding visually interesting features to our styling like hover states and cursor types. 
+    * Ultimately, we made our best guess at the colors and think it is a faithful rendering. 
+    * The disabled save button was conquered and we can add that to our toolbox of skills. 
+    * The gray overlay taught us about position: fixed. 
+    
+ * JavaScript
+   * Used to provide functionality and localStorage to our website.
+   * Challenges: 
+     * LocalStorage was a serious challenge. We had to ultimately nuke some code and rewrite it. Conceptually, we understood it, but the      implementation definitely got hairy.
+     * At first, we thought the functionality of favoriting cards seemed simple, but it turned out to be a meatier challenge than we were expecting.     
+   * Wins: 
+     * Ultimately, localStorage was a success! Having to nuke that code taught us a number of lessons (advocate for your learning, code isn't precious) and it wasn't easy, but the code works and our knowledge has leveled up. 
+     * A few different functions to handle the favoriting process enabled the star icon to function for the user and simplify the process of favoriting and storing those ideas. 
+
+## Provided Comp
+
+Full Mobile Layout:
 
 ![Mobile Layout](https://frontend.turing.io/projects/module-1/assets/ideabox-group/mobile.jpg)
 
-Full mobile layout with open navigation:
+Full Mobile Layout with Open Navigation:
 
 ![Mobile Layout with Dropdown](https://frontend.turing.io/projects/module-1/assets/ideabox-group/mobile-dropdown.jpg)
 
-![Colors](https://frontend.turing.io/projects/module-1/assets/ideabox-group/colors.jpg)
-![Colors](https://frontend.turing.io/projects/module-1/assets/ideabox-group/icons.jpg)
-
-You will need the `svg` files for the star, delete, and menu icons. [Here's the link to download the `svg` icons.](https://drive.google.com/drive/folders/18xpWplI0tpXIK1omBZeq04LEx2OMzzMK?usp=sharing)
-
-### Iteration 1 - Desktop Layout
-
-Now that your Mobile Layout is in place, it's time to write some media queries so this is a responsive site.
+Desktop Layout:
 
 ![Desktop Layout](https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg)
 
-### Iteration 2 and beyond
+## Site Tour
 
-We strongly recommend that you complete Iterations 0-1 before moving on to the next iterations!
+### Responsive Views
 
-### Architecture
+Full Mobile Layout:
 
-For this project, we'll be increasingly thinking about the "data model" and "DOM model" as separate entities. We'll be using:
+![Mobile Layout](img/mobileviewideabox.png)
 
-- JSON and `localStorage` to persist data on page reload.
-- vanilla JavaScript to manage client-side interactions.
+Full Mobile Layout with Open Navigation:
 
-Your entire application will consist of one HTML page or template. You will have two JavaScript files, for now:
+![Mobile Layout](img/openmenumobiledideabox.png)
 
-1. An `idea.js` file that contains an `Idea` class.
-  * `Idea` methods must include, but are not limited to:
-    1. `constructor`
-    2. `saveToStorage` (should only have one job which is to save the instance to storage)
-    3. `deleteFromStorage`
-    4. `updateIdea` (should be able to update the idea's title, body, or starred state)
-2. A `main.js` file that contains all DOM related JavaScript.
+Desktop Layout:
 
-**Note** The `idea.js` file  must be the first script in your HTML so that your `main.js` file has access to your `Idea` class.
+![Mobile Layout](img/desktopideabox.png)
 
-### Data Model
+Responsiveness in Action: 
 
-* An idea has an _id_, _title_, _body_, and _star_.
-  * The _id_ should be a unique identifier. (Note: generating a random number does _not_ guarantee it will be unique)
-  * _title_ and _body_ are strings.
-  * _star_ is a boolean.
+![Responsiveness Gif](https://i.imgur.com/A3UK7si.gifv)
 
-Each idea should be created as an object instance of the `Idea` class. Once an idea object is created, all that data can be used to update the DOM. That object should also be added to a `list` of all the ideas your application currently has. This should probably be a global variable in your `main.js`.
+### Creating an Idea Card
 
-### Iteration 2 - Adding Ideas
+Create an Idea Card
 
-As a user,
-- When I click "Save",
-- If I entered information in both the "Title" and "Body" input fields,
-- I should see a new idea card with the provided title and body appear in the idea list
+![Create Card](https://i.imgur.com/EWBvcXF.gifv)
 
-As a user,
-- When I click "Save",
-- If I entered information in both the "Title" and "Body" input fields,
-- I should see the "Title" and "Body" input fields clear out
+### Delete a Card
 
-As a user,
-- When I look at the "Save" button,
-- When either the "Title" or "Body" inputs are empty,
-- I should notice that the "Save" button is disabled because it is a lighter color and the cursor is not a pointer when I hover over it
+Delete a Card
 
-As a user,
-- When I click "Save",
-- And a new card is successfully created,
-- I should _not_ see the page reload
+![Delete Card](https://i.imgur.com/i0XObd1.gifv)
 
-### Iteration 3 - Favoriting & Deleting Ideas
+### Search Cards
 
-As a user,
-- When I click the "Delete" button on an idea card,
-- The card should be permanently removed from my view
+Search Cards based on User Input
 
-As a user,
-- When I click the "Star" button on an idea card,
-- When the button was an outline of a star (not favorited),
-- The button should now be a filled in star (favorited)
+![Search Cards](https://i.imgur.com/IAS9OUT.gifv)
 
-As a user,
-- When I click the "Star" button on an idea card,
-- When the button was a filled in star (favorited),
-- The button should now be an outline of a star (not favorited)
+### Show Starred Ideas
 
-As a user,
-- When I delete or favorite any card,
-- I should _not_ see the page reload
+Show Starred Ideas
 
-### Iteration 4 - Local Storage & Filtering
-
-As a user,
-- When I create one idea successfully, then refresh the page,
-- The idea card is still in the idea list
-
-As a user,
-- When I create two cards successfully, delete one, then refresh the page,
-- One idea card is still in the idea list (the one I did not delete)
-
-As a user,
-- When I favorite an idea card, then refresh the page,
-- That idea card is still in the "favorite" state with the filled in star icon
-
-As a user,
-- When I click "Show Starred Ideas"
-- I see only card that are favorited
-
-As a user,
-- When I click "Show Starred Ideas"
-- I see the text on that button has changed to "Show All Ideas"
-
-As a user,
-- When I click "Show Starred Ideas"
-- Then I click what is now "Show All Ideas"
-- I see all idea, favorited or not
-
-As a user,
-- When a type a letter or phrase into the search bar
-- I now only see the cards that include the letter/phrase in the title or body
-
-As a user,
-- When I backspace and delete something from the search bar, so that it's empty
-- I see all cards since no search criteria is being provided
-
-### Iteration 5 - Commenting on Ideas
-
-### Architecture
-
-In addition to your `idea.js` and `main.js`, you now need to have a `comment.js` file.
-
-This file should hold a class, `Comment`. `Comment` methods must include, but are not limited to:
-1. `constructor`
-2. `saveToStorage` (should only have one job which is to save the instance to storage)
-3. `deleteFromStorage`
-
-### Data Model
-
-* An idea now also has a _comments_ property
-  * The _id_ should be a unique identifier. (Note: generating a random number does _not_ guarantee it will be unique)
-  * _title_ and _body_ are strings.
-  * _star_ is a boolean.
-  * _comments_ is an array.
-
-* A comment should have _content_ - a string that holds the content of a comment. If you end up completing an extension, you may need your comment class to have additional properties.
+![Show Ideas](https://i.imgur.com/CY8tSDB.gifv)
 
 
-As a user,
-- When I click the "Add" icon on an idea card,
-- A form to add a comment appears
+## Team Contributions
 
-As a user,
-- When I open the comment form on a card, type something in, and click "Add Comment",
-- The text typed in is now a comment attached to this card
+### Project Lead 
 
-As a user,
-- When I open the comment form on a card, type something in, and click "Add Comment",
-- The "Comment" input field clears out and is ready to accept another comment
+* Scott Ertmer, https://github.com/sertmer
 
-As a user,
-- When I open the comment form on am idea card,
-- When the "Comment" input field is empty,
-- I should notice that the "Add Comment" button is disabled because it is a lighter color and the cursor is not a pointer when I hover over it
+### Team Members
 
-As a user,
-- When I comment on an idea card, then refresh the page,
-- That comment is still on the idea card
+* Caleb Cyphers, https://github.com/CalebCyphers
+* Stacy Potten, https://github.com/stacyp2006
+* Michael Walker, https://github.com/MichaelEWalker87
 
+### Mentors Consulted
 
-## Rubric
+All mentors were on calls with us as we planned, problem-solved, coded, debugged, and refactored. All mentors reviewed code in some way and changes were made based on that feedback. 
 
-### Functional Expectations
+* Maria St. Louis-Sanchez, Stacy's mentor
+* Johnny Cassidy, Caleb's mentor
+* Nathaniel Foster, Mike's mentor
+* John Adams, Student Support, assigned to Stacy
 
-* **4:** Application meets all of the expectations from Iteration 4 and most functionality from Iteration 5.
-* **3:** Application meets all of the expectations from Iteration 4.
-* **2:** Application meets all of the expectations of Iteration 3.
-* **1:** Application meets all of the expectations of Iteration 2.
+### Coheart Members Consulted
 
-### Comp Recreation
+* Ian Holladay, GitHub Firefighter
+* Nathan Darrington, LocalStorage Tour Guide
+* Orlando Murcio, Array Promoter
+* Matthew Lane, DeleteFromStorage Guru
 
-* **4:** Additional elements that have been added match the visuals established in the comps. Every little detail was built out thoughtfully - from hover states to placeholders, etc.
-* **3:** Application implements all major comp details accurately and correctly on desktop and mobile (colors, fonts, icons, spacing, alignment, etc.) with **smooth transitions between screen sizes**. Additional elements added generally match the visuals established in the comps, but may be slightly awkward.
-* **2:** Application implements most major comp details accurately and correctly on **desktop and mobile** (colors, fonts, icons, spacing, alignment, etc.). Transitions between screen sizes may not be smooth.
-* **1:** Application implements all major comp details on desktop only (colors, fonts, icons, spacing, alignment, etc.), OR masonry layout is not implemented.
-
-### Git Workflow & Documentation
-
-* **4:** A PR template was used. A code review was requested and completed by a mentor, and all team members can speak to how the feedback in code review was implemented (and point to the commit(s) that implemented the feedback).
-* **3:** Every team member (on a team of 3) authors between 25%-40% of the commits. Most commits are formatted correctly. Every team member contributes to at least 2 meaningful PR conversations. The README is formatted well and contains:
-  - Overview of project and goals
-  - Overview of technologies used, challenges, and wins, any other reflections
-  - Screenshots of comp and your app
-  - Credit all teammates
-* **2:** Every team member (on a team of 3) authors between 20%-45% of the commits. More than a few commits are formatted incorrectly. The README is formatted well but may be lacking in detail.
-* **1:** Commit and PR history does not tell a story of the application OR a README has not been created/has minimal information.
-
-### JavaScript - Style and Implementation
-
-* **4:**
-  * All loops are refactored into the proper array prototype iteration methods
-  * Uses logical operators instead of if/else statements where applicable
-  * When 'Filtering and Searching by Text' and 'Viewing Urgent ToDo Cards', to-dos that do not need to be shown on the DOM should be completely removed from the DOM, instead of only being hidden from view
-* **3:**
-  * Application uses the Data Model exclusively to track changes to the ideas,
-    and display of ideas happens after the Data Model has been updated
-  * DRY and SRP practices are demonstrated in codebase and students can speak to implementation decisions
-  * All functions are less than 10 lines
-  * There are no nested if/else statements
-  * There are no global variables aside from query selectors and an array for your to-dos
-  * Uses event delegation correctly on dynamic elements for deleting, checking tasks off, and marking a to-do urgent
-* **2:** Application correctly implements data model for the `Idea` class including all required methods
-* **1:** Crafts JS according to the [Turing JS Style Guide](https://github.com/turingschool-examples/javascript/tree/master/es5)

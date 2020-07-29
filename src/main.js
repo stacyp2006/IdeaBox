@@ -11,6 +11,7 @@ var menuHeaderIcon = document.querySelector('.menu-header-icon');
 var mobileMenu = document.querySelector('.open-nav-filter');
 var overlay = document.querySelector('.whole-filter-section');
 var closeIcon = document.querySelector('.menu-nav-close-icon');
+var showStarredButton = document.querySelectorAll('.show-starred-ideas');
 
 var storage = [];
 
@@ -29,6 +30,7 @@ function clickHandler(event) {
   if (event.target.classList.contains("card-star-favorite-icon")) starIdeaButton();
   if (event.target.className === "menu-header-icon") openNav();
   if (event.target.className === "menu-nav-close-icon") closeNav();
+  if (event.target.className === "show-starred-ideas") starHandler();
 }
 
 function keyHandler(event) {
@@ -139,10 +141,39 @@ function toggleFavorite(event) {
     if (favorite.dataset.id === `${storage[i].id}` && !storage[i].star) {
       storage[i].star = true;
       storage[i].updateIdea(storage);
-    } else {
+    } else if (favorite.dataset.id === `${storage[i].id}` && storage[i].star) {
       storage[i].star = false;
       storage[i].updateIdea(storage);
     };
+  };
+}
+
+function starHandler() {
+  console.log(showStarredButton[0].innerText);
+  if (showStarredButton[0].innerText === "Show All Ideas") {
+    restoreIdeas();
+  } else {
+    starredIdeas();
+  };
+}
+
+function starredIdeas() {
+  showStarredButton[0].innerText = "Show All Ideas";
+  showStarredButton[1].innerText = "Show All Ideas";
+  allCards.innerHTML = "";
+  for (var i = 0; i < storage.length; i++) {
+    if (storage[i].star) {
+      buildCard(storage[i]);
+    };
+  };
+}
+
+function restoreIdeas() {
+  showStarredButton[0].innerText = "Show Starred Ideas";
+  showStarredButton[1].innerText = "Show Starred Ideas";
+  allCards.innerHTML = "";
+  for (var i = 0; i < storage.length; i++) {
+    buildCard(storage[i]);
   };
 }
 

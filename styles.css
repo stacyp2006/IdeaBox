@@ -55,6 +55,10 @@ body {
   margin: 1rem;
 }
 
+.menu-nav-close-icon:hover {
+  cursor: pointer;
+}
+
 .open-nav-filter {
   position: absolute;
   background: #1F1F3D;
@@ -86,6 +90,10 @@ body {
   font-family: 'Open Sans';
   font-weight: 600;
   font-size: 1.35rem;
+}
+
+.show-starred-ideas:hover {
+  cursor: pointer;
 }
 
 .filter-star-ideas {
@@ -128,6 +136,10 @@ body {
   height: 2rem;
   padding-top: 0.25rem;
   padding-left: 0.25rem;
+}
+
+.menu-header-icon:hover {
+  cursor: pointer;
 }
 
 /*=== title-form ===*/

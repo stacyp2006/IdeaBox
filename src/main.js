@@ -40,10 +40,6 @@ function keyHandler(event) {
   if (event.target.className === "search-box-input") searchFilter();
 }
 
-function mouseOverHandler(event) {
-
-}
-
 function saveIdeaButton() {
   var newIdea = new Idea(titleInput.value, bodyInput.value)
   buildCard(newIdea)

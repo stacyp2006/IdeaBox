@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
+
 <body class="purple-1">
   <section class="open-nav-filter hidden">
     <section class="open-nav-top">
@@ -22,50 +23,51 @@
     </section>
   </section>
   <section class="whole-filter-section hidden"></section>
-    <section class="menu purple-4">
-      <img src="./img/menu.svg" class="menu-header-icon" alt="menu icon">
-      <section class="header-text-wrapper">
-        <h1 class="header-text">IdeaBox</h1>
+  <section class="menu purple-4">
+    <img src="./img/menu.svg" class="menu-header-icon" alt="menu icon">
+    <section class="header-text-wrapper">
+      <h1 class="header-text">IdeaBox</h1>
+    </section>
+    <section class="menu-buttons-wrapper">
+      <section class="filter-starred-ideas-wrapper">
+        <h4 class="filter-star-ideas">Filter Starred Ideas</h4>
       </section>
-      <section class="menu-buttons-wrapper">
-        <section class="filter-starred-ideas-wrapper">
-          <h4 class="filter-star-ideas">Filter Starred Ideas</h4>
-        </section>
-        <button type="button" name="button" class="show-starred-ideas">
-          Show Starred Ideas
+      <button type="button" name="button" class="show-starred-ideas">
+        Show Starred Ideas
+      </button>
+    </section>
+  </section>
+  <main class="ideas">
+    <section class="idea-form purple-2">
+      <section class="title-form">
+        <h2 class="title-text">Title</h2>
+        <textarea class="title-input" name="name" rows="8" cols="40"
+          placeholder="Type Title Here"></textarea>
+      </section>
+      <section class="body-form">
+        <h2 class="body-text">Body</h2>
+        <textarea class="body-input" name="body-input" rows="8" cols="40"
+          placeholder="Type Idea Here"></textarea>
+      </section>
+      <section class="save-button-section">
+        <button class="save-button disabled" type="save" name="save-button">
+          Save
         </button>
       </section>
+      <section class="search-section">
+        <button class="search-icon-button">
+          <img src="./img/search.svg" class="search-icon" alt="search icon">
+        </button>
+        <input class="search-box-input" placeholder="Search Ideas"
+          name="search-box-input"></input>
+      </section>
     </section>
-    <main class="ideas">
-      <section class="idea-form purple-2">
-        <section class="title-form">
-          <h2 class="title-text">Title</h2>
-          <textarea class="title-input" name="name" rows="8" cols="40"
-            placeholder="Type Title Here"></textarea>
-        </section>
-        <section class="body-form">
-          <h2 class="body-text">Body</h2>
-          <textarea class="body-input" name="body-input" rows="8" cols="40"
-            placeholder="Type Idea Here"></textarea>
-        </section>
-        <section class="save-button-section">
-          <button class="save-button disabled" type="save" name="save-button">
-            Save
-          </button>
-        </section>
-        <section class="search-section">
-          <button class="search-icon-button">
-            <img src="./img/search.svg" class="search-icon" alt="search icon">
-          </button>
-          <input class="search-box-input" placeholder="Search Ideas"
-            name="search-box-input"></input>
-        </section>
-      </section>
-      <section class="idea-cards">
-        <section class="all-cards"></section>
-      </section>
-    </main>
+    <section class="idea-cards">
+      <section class="all-cards"></section>
+    </section>
+  </main>
   <script src="./src/idea.js"></script>
   <script src="./src/main.js"></script>
 </body>
+
 </html>

@@ -1,5 +1,3 @@
-/*=== Reset ===*/
-
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
@@ -10,8 +8,6 @@ body {
   flex-direction: column;
   height: 100%;
 }
-
-/*=== Background Colors ===*/
 
 .purple-1 {
   background: #EAEAF4;
@@ -26,11 +22,9 @@ body {
 }
 
 .purple-4 {
-  background: #1F1F3D;;
+  background: #1F1F3D;
+  ;
 }
-
-
-/*=== Fonts ===*/
 
 .header-text {
   color: #EAEAF4;
@@ -43,16 +37,19 @@ body {
   font-family: 'Open Sans';
 }
 
-/*=== open-nav-filter ===*/
-
 .hidden {
-  display: none!important;
+  display: none !important;
 }
 
 .menu-nav-close-icon {
   width: 2.75rem;
   height: auto;
   margin: 1rem;
+}
+
+.menu-nav-close-icon:hover {
+  cursor: pointer;
+  opacity: 80%
 }
 
 .open-nav-filter {
@@ -67,7 +64,7 @@ body {
 .open-nav-top {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  position:relative;
+  position: relative;
   z-index: 3;
 }
 
@@ -86,6 +83,26 @@ body {
   font-family: 'Open Sans';
   font-weight: 600;
   font-size: 1.35rem;
+}
+
+.show-starred-ideas:hover {
+  cursor: pointer;
+  animation: pulse 5s infinite;
+  border-color: #b29dc9;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0.25rem #e8c7ff;
+  }
+
+  50% {
+    box-shadow: 0 0 0.5rem #e8c7ff;
+  }
+
+  100% {
+    box-shadow: 0 0 0.25rem #e8c7ff;
+  }
 }
 
 .filter-star-ideas {
@@ -108,7 +125,6 @@ body {
   z-index: 1;
 }
 
-/*=== upper-half-nav-input ===*/
 .menu {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -130,7 +146,10 @@ body {
   padding-left: 0.25rem;
 }
 
-/*=== title-form ===*/
+.menu-header-icon:hover {
+  cursor: pointer;
+  opacity: 80%
+}
 
 .title-form {
   display: flex;
@@ -158,7 +177,12 @@ body {
   padding: 0.5rem;
 }
 
-/*=== body-form ===*/
+.title-input::placeholder {
+  font-family: 'Open Sans';
+  color: #a9aad2;
+  font-size: 1.25rem;
+  padding-left: 0.1rem;
+}
 
 .body-form {
   display: flex;
@@ -186,7 +210,12 @@ body {
   padding: 0.5rem;
 }
 
-/*=== save-form ===*/
+.body-input::placeholder {
+  font-family: 'Open Sans';
+  color: #a9aad2;
+  font-size: 1.25rem;
+  padding-left: 0.1rem;
+}
 
 .save-button-section {
   display: flex;
@@ -209,6 +238,8 @@ body {
 
 .save-button:hover {
   cursor: pointer;
+  animation: pulse 5s infinite;
+  border-color: #ebecff;
 }
 
 .save-button.disabled {
@@ -218,9 +249,9 @@ body {
 
 .save-button.disabled:hover {
   cursor: default;
+  animation: 0;
+  border-color: none;
 }
-
-/*=== search-form ===*/
 
 .search-icon {
   width: 1.5rem;
@@ -239,7 +270,7 @@ body {
   font-family: 'Open Sans';
   color: #a9aad2;
   font-size: 1.25rem;
-  padding-left: 0.5rem;
+  padding-left: 0.1rem;
 }
 
 .search-section {
@@ -258,7 +289,6 @@ body {
   height: 3rem;
   border: 0rem;
 }
-/*=== idea-cards && all-cards ===*/
 
 .all-cards {
   display: flex;
@@ -276,8 +306,6 @@ body {
   border: 0.1rem solid #1F1F3D;
 }
 
-/*===*** subsection card-header idea-cards && all-cards ===*/
-
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -291,12 +319,20 @@ body {
   height: auto;
 }
 
+.card-star-favorite-icon:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
 .card-delete-icon {
   width: 2.5rem;
   height: auto;
 }
 
-/*===*** subsection card-body idea-cards && all-cards ===*/
+.card-delete-icon:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
 
 .card-body {
   margin: 1rem;
@@ -321,8 +357,6 @@ body {
   font-size: 1.35rem;
 }
 
-/*===*** subsection card-footer idea-cards && all-cards ===*/
-
 .card-footer {
   display: flex;
   width: 100%;
@@ -342,8 +376,6 @@ body {
   width: 2.5rem;
   height: auto;
 }
-
-/*=== main section ===*/
 
 .ideas {
   display: flex;
@@ -366,9 +398,7 @@ body {
   padding-bottom: 2rem;
 }
 
-/*=== media queries ===*/
-
-@media (min-width: 26.5rem) and (max-width: 64.2rem){
+@media (min-width: 26.5rem) and (max-width: 64.2rem) {
   .all-cards {
     display: flex;
     flex-direction: row;
@@ -482,7 +512,6 @@ body {
     font-weight: 600;
     font-size: 1.35rem;
   }
-
 
   .idea-form {
     padding-left: 25%;

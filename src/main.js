@@ -160,7 +160,6 @@ function toggleFavorite(event) {
 }
 
 function starHandler() {
-  console.log(showStarredButton[0].innerText);
   if (showStarredButton[0].innerText === "Show All Ideas") {
     restoreIdeas();
   } else {

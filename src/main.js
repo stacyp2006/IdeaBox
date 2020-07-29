@@ -122,7 +122,7 @@ function searchFilter() {
   }
 }
 
-function deleteIdea(event) {
+function deleteIdea() {
   var deleteSelection = event.target.closest(".card");
   deleteSelection.remove();
   for (var i = 0; i < storage.length; i++) {

@@ -152,11 +152,10 @@ function toggleFavorite(event) {
   for (var i = 0; i < storage.length; i++) {
     if (favorite.dataset.id === `${storage[i].id}` && !storage[i].star) {
       storage[i].star = true;
-      storage[i].updateIdea(storage);
     } else if (favorite.dataset.id === `${storage[i].id}` && storage[i].star) {
       storage[i].star = false;
-      storage[i].updateIdea(storage);
     };
+    storage[i].updateIdea(storage);
   };
 }
 

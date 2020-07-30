@@ -2,9 +2,9 @@
 
 Every developer has more ideas than time. As David Allen likes to say "the human brain is for creating ideas, not remembering them." In this project, we built an application that allows a user to record and archive their ideas (good and bad alike).
 
-Throughout the project, one of our focuses was on providing a fluid and responsive client-side interface. To this end, we relied on JavaScript, implemented snappy filtering in the browser, and `localStorage` to persist our wonderful ideas between sessions. HTML and CSS were utilized to provide structure and styling to the page. 
+Throughout the project, one of our focuses was on providing a fluid and responsive client-side interface. To this end, we relied on JavaScript, implemented snappy filtering in the browser, and `localStorage` to persist our wonderful ideas between sessions. HTML and CSS were utilized to provide structure and styling to the page.
 
-Our final result is an application that allows a user to create an "Idea Card," store the card, "favorite" the card, display the favorites, search the collection of cards based on user-defined search terms, and delete the idea from the collection. This is responsive on mobile, tablet and desktop screens. 
+Our final result is an application that allows a user to create an "Idea Card," store the card, "favorite" the card, display the favorites, search the collection of cards based on user-defined search terms, and delete the idea from the collection. This is responsive on mobile, tablet and desktop screens.
 
 ## Learning Goals
 
@@ -35,40 +35,40 @@ Our final result is an application that allows a user to create an "Idea Card," 
 * A DTR was established to set group norms and expectations. (link here)
 * Wireframe(https://i.imgur.com/JTflp1L.png)
 * GitHub was used to host our project repository and allow us to share and review code.
-* Slack, Tuple and Zoom were all used for group communication and meetings. 
+* Slack, Tuple and Zoom were all used for group communication and meetings.
 
 ### Programmming Technology
 
 * HTML
   * Used to provide the general structure of our website
-  * Challenges: 
-    * The original link for the font provided in the comp wasn't quite as functional as we would have liked. 
+  * Challenges:
+    * The original link for the font provided in the comp wasn't quite as functional as we would have liked.
     * There were a couple challenges with hidden classes and getting them to work properly between the CSS/HTML.
-    * Accessing both Show Starred Idea buttons to make changes via innerText was a challenge initially. 
-  * Wins: 
-    * We searched up a better link for the font that enabled us to have the styling we wanted in CSS. 
-    * Ordering our HTML properly and using wrappers helped up get the header/nav section to render properly in both the mobile and desktop views. 
-    
-* CSS 
-  * Used to provide styling to our website. 
-  * Challenges: 
-    * Understanding which colors to use where based on the comp was at times tricky. 
-    * Getting the gray overlay to extend the length of the screen on mobile view was a challenge. 
+    * Accessing both Show Starred Idea buttons to make changes via innerText was a challenge initially.
+  * Wins:
+    * We searched up a better link for the font that enabled us to have the styling we wanted in CSS.
+    * Ordering our HTML properly and using wrappers helped up get the header/nav section to render properly in both the mobile and desktop views.
+
+* CSS
+  * Used to provide styling to our website.
+  * Challenges:
+    * Understanding which colors to use where based on the comp was at times tricky.
+    * Getting the gray overlay to extend the length of the screen on mobile view was a challenge.
     * Disabling the save button was a new skill.  
   * Wins:
-    * We enjoyed adding visually interesting features to our styling like hover states and cursor types. 
-    * Ultimately, we made our best guess at the colors and think it is a faithful rendering. 
-    * The disabled save button was conquered and we can add that to our toolbox of skills. 
-    * The gray overlay taught us about position: fixed. 
-    
+    * We enjoyed adding visually interesting features to our styling like hover states and cursor types.
+    * Ultimately, we made our best guess at the colors and think it is a faithful rendering.
+    * The disabled save button was conquered and we can add that to our toolbox of skills.
+    * The gray overlay taught us about position: fixed.
+
  * JavaScript
    * Used to provide functionality and localStorage to our website.
-   * Challenges: 
+   * Challenges:
      * LocalStorage was a serious challenge. We had to ultimately nuke some code and rewrite it. Conceptually, we understood it, but the      implementation definitely got hairy.
      * At first, we thought the functionality of favoriting cards seemed simple, but it turned out to be a meatier challenge than we were expecting.     
-   * Wins: 
-     * Ultimately, localStorage was a success! Having to nuke that code taught us a number of lessons (advocate for your learning, code isn't precious) and it wasn't easy, but the code works and our knowledge has leveled up. 
-     * A few different functions to handle the favoriting process enabled the star icon to function for the user and simplify the process of favoriting and storing those ideas. 
+   * Wins:
+     * Ultimately, localStorage was a success! Having to nuke that code taught us a number of lessons (advocate for your learning, code isn't precious) and it wasn't easy, but the code works and our knowledge has leveled up.
+     * A few different functions to handle the favoriting process enabled the star icon to function for the user and simplify the process of favoriting and storing those ideas.
 
 ## Provided Comp
 
@@ -100,38 +100,42 @@ Desktop Layout:
 
 ![Mobile Layout](img/desktopideabox.png)
 
-Responsiveness in Action: 
+Responsiveness in Action:
 
-![Responsiveness Gif](https://i.imgur.com/A3UK7si.gifv)
+![Responsiveness Gif](https://i.imgur.com/A3UK7si.gif)
 
 ### Creating an Idea Card
 
 Create an Idea Card
 
-![Create Card](https://i.imgur.com/EWBvcXF.gifv)
+![Create Card](https://i.imgur.com/EWBvcXF.gif)
 
 ### Delete a Card
 
 Delete a Card
 
-![Delete Card](https://i.imgur.com/i0XObd1.gifv)
+![Delete Card](https://i.imgur.com/i0XObd1.gif)
 
 ### Search Cards
 
 Search Cards based on User Input
 
-![Search Cards](https://i.imgur.com/IAS9OUT.gifv)
+![Search Cards](https://i.imgur.com/IAS9OUT.gif)
 
 ### Show Starred Ideas
 
 Show Starred Ideas
 
-![Show Ideas](https://i.imgur.com/CY8tSDB.gifv)
+![Show Ideas](https://i.imgur.com/CY8tSDB.gif)
 
+
+Show Starred Ideas On Reload
+
+![Show Ideas On Reload](https://i.imgur.com/VjEJhyd.gif)
 
 ## Team Contributions
 
-### Project Lead 
+### Project Lead
 
 * Scott Ertmer, https://github.com/sertmer
 
@@ -143,7 +147,7 @@ Show Starred Ideas
 
 ### Mentors Consulted
 
-All mentors were on calls with us as we planned, problem-solved, coded, debugged, and refactored. All mentors reviewed code in some way and changes were made based on that feedback. 
+All mentors were on calls with us as we planned, problem-solved, coded, debugged, and refactored. All mentors reviewed code in some way and changes were made based on that feedback.
 
 * Maria St. Louis-Sanchez, Stacy's mentor
 * Johnny Cassidy, Caleb's mentor
@@ -156,4 +160,3 @@ All mentors were on calls with us as we planned, problem-solved, coded, debugged
 * Nathan Darrington, LocalStorage Tour Guide
 * Orlando Murcio, Array Promoter
 * Matthew Lane, DeleteFromStorage Guru
-

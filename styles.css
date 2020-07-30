@@ -23,7 +23,6 @@ body {
 
 .purple-4 {
   background: #1F1F3D;
-  ;
 }
 
 .header-text {
@@ -148,7 +147,7 @@ body {
 
 .menu-header-icon:hover {
   cursor: pointer;
-  opacity: 80%
+  opacity: 80%;
 }
 
 .title-form {

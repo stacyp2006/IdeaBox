@@ -1,3 +1,5 @@
+/*=== Reset ===*/
+
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
@@ -8,6 +10,8 @@ body {
   flex-direction: column;
   height: 100%;
 }
+
+/*=== Background Colors ===*/
 
 .purple-1 {
   background: #EAEAF4;
@@ -23,8 +27,9 @@ body {
 
 .purple-4 {
   background: #1F1F3D;
-  ;
 }
+
+/*=== Fonts ===*/
 
 .header-text {
   color: #EAEAF4;
@@ -36,6 +41,8 @@ body {
 .body-text {
   font-family: 'Open Sans';
 }
+
+/*=== menu section ===*/
 
 .hidden {
   display: none !important;
@@ -148,8 +155,10 @@ body {
 
 .menu-header-icon:hover {
   cursor: pointer;
-  opacity: 80%
+  opacity: 80%;
 }
+
+/*=== main section ===*/
 
 .title-form {
   display: flex;
@@ -397,6 +406,8 @@ body {
   height: 100%;
   padding-bottom: 2rem;
 }
+
+/*=== media queries ===*/
 
 @media (min-width: 26.5rem) and (max-width: 64.2rem) {
   .all-cards {

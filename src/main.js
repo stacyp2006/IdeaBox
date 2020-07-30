@@ -21,31 +21,31 @@ window.addEventListener('keyup', keyHandler);
 window.addEventListener('load', loadHandler);
 
 function loadHandler() {
-  localStoragePush()
-  populateCards()
+  localStoragePush();
+  populateCards();
 }
 
 function clickHandler(event) {
-  if (event.target.className === "save-button") saveIdeaButton();
-  if (event.target.className === "card-delete-icon") deleteIdea();
-  if (event.target.classList.contains("card-star-favorite-icon")) starIdeaButton();
-  if (event.target.className === "menu-header-icon") openNav();
-  if (event.target.className === "menu-nav-close-icon") closeNav();
-  if (event.target.className === "show-starred-ideas") starHandler();
+  if (event.target.className === 'save-button') saveIdeaButton();
+  if (event.target.className === 'card-delete-icon') deleteIdea();
+  if (event.target.classList.contains('card-star-favorite-icon')) starIdeaButton();
+  if (event.target.className === 'menu-header-icon') openNav();
+  if (event.target.className === 'menu-nav-close-icon') closeNav();
+  if (event.target.className === 'show-starred-ideas') starHandler();
 }
 
 function keyHandler(event) {
-  if (event.target.className === "title-input") saveButtonDisable();
-  if (event.target.className === "body-input") saveButtonDisable();
-  if (event.target.className === "search-box-input") searchFilter();
+  if (event.target.className === 'title-input') saveButtonDisable();
+  if (event.target.className === 'body-input') saveButtonDisable();
+  if (event.target.className === 'search-box-input') searchFilter();
 }
 
 function saveIdeaButton() {
-  var newIdea = new Idea(titleInput.value, bodyInput.value)
-  buildCard(newIdea)
-  resetForm()
-  pushToStorage(newIdea)
-  newIdea.saveToStorage()
+  var newIdea = new Idea(titleInput.value, bodyInput.value);
+  buildCard(newIdea);
+  resetForm();
+  pushToStorage(newIdea);
+  newIdea.saveToStorage();
 }
 
 function buildCard(newIdeaObject) {
@@ -68,15 +68,15 @@ function buildCard(newIdeaObject) {
         <p>Comment</p>
       </section>
     </section>
-  `)
+  `);
 }
 
 function setStar(newIdeaObject) {
   if (newIdeaObject.star === true) {
-    return './img/star-active.svg'
+    return './img/star-active.svg';
   } else {
-    return './img/star.svg'
-  }
+    return './img/star.svg';
+  };
 }
 
 function pushToStorage(newIdeaObject) {
@@ -90,42 +90,42 @@ function localStoragePush() {
       var currentCard = new Idea(ideas[i].title, ideas[i].body, ideas[i].star);
       currentCard.id = ideas[i].id;
       storage.push(currentCard);
-    }
-  }
+    };
+  };
 }
 
 function populateCards() {
   for (var i = 0; i < storage.length; i++) {
-    buildCard(storage[i])
-  }
+    buildCard(storage[i]);
+  };
 }
 
 function resetForm() {
-  titleInput.value = "";
-  bodyInput.value = "";
-  saveButton.classList.add("disabled");
+  titleInput.value = '';
+  bodyInput.value = '';
+  saveButton.classList.add('disabled');
 }
 
 function saveButtonDisable() {
-  if (titleInput.value.trim() !== "" && bodyInput.value.trim() !== "") {
-    saveButton.classList.remove("disabled");
-  }
+  if (titleInput.value.trim() !== '' && bodyInput.value.trim() !== '') {
+    saveButton.classList.remove('disabled');
+  };
 }
 
 function searchFilter() {
-  allCards.innerHTML = "";
+  allCards.innerHTML = '';
   for (var i = 0; i < storage.length; i++) {
-    var title = storage[i].title.toLowerCase()
-    var body = storage[i].body.toLowerCase()
-    var search = searchInput.value.toLowerCase()
+    var title = storage[i].title.toLowerCase();
+    var body = storage[i].body.toLowerCase();
+    var search = searchInput.value.toLowerCase();
     if (title.includes(search) || body.includes(search)) {
         buildCard(storage[i]);
     };
-  }
+  };
 }
 
 function deleteIdea() {
-  var deleteSelection = event.target.closest(".card");
+  var deleteSelection = event.target.closest('.card');
   deleteSelection.remove();
   for (var i = 0; i < storage.length; i++) {
     if (deleteSelection.dataset.id === `${storage[i].id}`) {
@@ -142,15 +142,15 @@ function starIdeaButton() {
 }
 
 function changeStarImage(event) {
-  if (event.target.attributes.src.nodeValue === "./img/star.svg") {
-    event.target.attributes.src.nodeValue = "./img/star-active.svg";
+  if (event.target.attributes.src.nodeValue === './img/star.svg') {
+    event.target.attributes.src.nodeValue = './img/star-active.svg';
   } else {
-    event.target.attributes.src.nodeValue = "./img/star.svg";
+    event.target.attributes.src.nodeValue = './img/star.svg';
   };
 }
 
 function toggleFavorite(event) {
-  var favorite = event.target.closest(".card");
+  var favorite = event.target.closest('.card');
   for (var i = 0; i < storage.length; i++) {
     if (favorite.dataset.id === `${storage[i].id}` && !storage[i].star) {
       storage[i].star = true;
@@ -162,7 +162,7 @@ function toggleFavorite(event) {
 }
 
 function starHandler() {
-  if (showStarredButton[0].innerText === "Show All Ideas") {
+  if (showStarredButton[0].innerText === 'Show All Ideas') {
     restoreIdeas();
   } else {
     starredIdeas();
@@ -170,9 +170,9 @@ function starHandler() {
 }
 
 function starredIdeas() {
-  showStarredButton[0].innerText = "Show All Ideas";
-  showStarredButton[1].innerText = "Show All Ideas";
-  allCards.innerHTML = "";
+  showStarredButton[0].innerText = 'Show All Ideas';
+  showStarredButton[1].innerText = 'Show All Ideas';
+  allCards.innerHTML = '';
   for (var i = 0; i < storage.length; i++) {
     if (storage[i].star) {
       buildCard(storage[i]);
@@ -181,9 +181,9 @@ function starredIdeas() {
 }
 
 function restoreIdeas() {
-  showStarredButton[0].innerText = "Show Starred Ideas";
-  showStarredButton[1].innerText = "Show Starred Ideas";
-  allCards.innerHTML = "";
+  showStarredButton[0].innerText = 'Show Starred Ideas';
+  showStarredButton[1].innerText = 'Show Starred Ideas';
+  allCards.innerHTML = '';
   for (var i = 0; i < storage.length; i++) {
     buildCard(storage[i]);
   };

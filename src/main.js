@@ -115,8 +115,10 @@ function saveButtonDisable() {
 function searchFilter() {
   allCards.innerHTML = "";
   for (var i = 0; i < storage.length; i++) {
-    if (storage[i].title.includes(searchInput.value) ||
-      storage[i].body.includes(searchInput.value)) {
+    var title = storage[i].title.toLowerCase()
+    var body = storage[i].body.toLowerCase()
+    var search = searchInput.value.toLowerCase()
+    if (title.includes(search) || body.includes(search)) {
         buildCard(storage[i]);
     };
   }
